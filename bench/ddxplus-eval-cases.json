@@ -1,0 +1,3990 @@
+[
+  {
+    "caseId": "ddx-01-anaphylaxis",
+    "groundTruthId": "anaphylaxis",
+    "groundTruthName": "Anaphylaxis",
+    "icd10": "T78.0",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 1,
+    "age": 29,
+    "sex": "M",
+    "initialEvidence": "E_194",
+    "evidences": [
+      "E_12",
+      "E_53",
+      "E_54_@_V_179",
+      "E_54_@_V_182",
+      "E_55_@_V_85",
+      "E_55_@_V_87",
+      "E_55_@_V_88",
+      "E_55_@_V_103",
+      "E_55_@_V_197",
+      "E_56_@_6",
+      "E_57_@_V_123",
+      "E_58_@_4",
+      "E_59_@_5",
+      "E_66",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_10",
+      "E_132_@_5",
+      "E_133_@_V_26",
+      "E_133_@_V_30",
+      "E_133_@_V_31",
+      "E_133_@_V_32",
+      "E_133_@_V_34",
+      "E_134_@_1",
+      "E_135_@_V_12",
+      "E_136_@_10",
+      "E_148",
+      "E_151",
+      "E_152_@_V_89",
+      "E_152_@_V_108",
+      "E_152_@_V_109",
+      "E_152_@_V_122",
+      "E_159",
+      "E_194",
+      "E_204_@_V_10",
+      "E_226"
+    ],
+    "vignette": "29-year-old male; presenting with a knife stroke, a cramp pain in the flank(L), iliac fossa(R), iliac fossa(L) (intensity 6/10); associated with significant dyspnea / shortness of breath, skin rash or cutaneous lesions, nausea or retching, localized or peripheral edema, syncope / loss of consciousness, inspiratory stridor; past history / risk factors: a known severe food allergy, more likely to develop common allergies than the general population.",
+    "referenceDifferential": [
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.0746
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0692
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.0636
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0612
+      },
+      {
+        "name": "Boerhaave",
+        "id": "boerhaave",
+        "probability": 0.0592
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.0586
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.0584
+      },
+      {
+        "name": "Inguinal hernia",
+        "id": "inguinal_hernia",
+        "probability": 0.0538
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-02-possible_nstemi_stemi",
+    "groundTruthId": "possible_nstemi_stemi",
+    "groundTruthName": "Possible NSTEMI / STEMI",
+    "icd10": "I21",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 1,
+    "age": 20,
+    "sex": "F",
+    "initialEvidence": "E_161",
+    "evidences": [
+      "E_2",
+      "E_53",
+      "E_54_@_V_183",
+      "E_54_@_V_193",
+      "E_55_@_V_29",
+      "E_55_@_V_30",
+      "E_55_@_V_55",
+      "E_55_@_V_56",
+      "E_55_@_V_159",
+      "E_56_@_7",
+      "E_57_@_V_31",
+      "E_57_@_V_163",
+      "E_57_@_V_177",
+      "E_57_@_V_194",
+      "E_57_@_V_195",
+      "E_58_@_6",
+      "E_59_@_9",
+      "E_69",
+      "E_70",
+      "E_71",
+      "E_79",
+      "E_104",
+      "E_105",
+      "E_108",
+      "E_148",
+      "E_161",
+      "E_191",
+      "E_204_@_V_10",
+      "E_225"
+    ],
+    "vignette": "20-year-old female; presenting with heavy, sickening pain in the lower chest, biceps(R), side of the chest(R) (intensity 7/10) radiating to the biceps(L), under the jaw; associated with nausea or retching, anorexia or early satiety; past history / risk factors: infected with the human immunodeficiency virus (hiv), diabetes, significantly overweight compared to people of the same height as you, high cholesterol or do you take medications to treat high cholesterol.",
+    "referenceDifferential": [
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.4475
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.1824
+      },
+      {
+        "name": "Pericarditis",
+        "id": "pericarditis",
+        "probability": 0.138
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.1291
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.103
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-03-acute_pulmonary_edema",
+    "groundTruthId": "acute_pulmonary_edema",
+    "groundTruthName": "Acute pulmonary edema",
+    "icd10": "J81.0",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 1,
+    "age": 35,
+    "sex": "F",
+    "initialEvidence": "E_175",
+    "evidences": [
+      "E_50",
+      "E_53",
+      "E_54_@_V_154",
+      "E_54_@_V_161",
+      "E_54_@_V_183",
+      "E_55_@_V_29",
+      "E_55_@_V_56",
+      "E_55_@_V_159",
+      "E_55_@_V_160",
+      "E_55_@_V_170",
+      "E_56_@_4",
+      "E_57_@_V_31",
+      "E_57_@_V_178",
+      "E_57_@_V_194",
+      "E_58_@_8",
+      "E_59_@_3",
+      "E_66",
+      "E_67",
+      "E_105",
+      "E_106",
+      "E_151",
+      "E_152_@_V_34",
+      "E_152_@_V_35",
+      "E_152_@_V_172",
+      "E_152_@_V_173",
+      "E_175",
+      "E_204_@_V_10",
+      "E_217",
+      "E_218"
+    ],
+    "vignette": "35-year-old female; presenting with tedious, sensitive pain in the lower chest, side of the chest(L), breast(R) (intensity 4/10) radiating to the biceps(L), triceps(L); associated with diaphoresis / profuse sweating, significant dyspnea / shortness of breath, paroxysmal nocturnal dyspnea (pnd), localized or peripheral edema, viral prodrome / malaise & myalgia, orthopnea (worse supine, relieved sitting); past history / risk factors: a heart attack or do you have angina (chest pain), heart failure.",
+    "referenceDifferential": [
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0769
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.0644
+      },
+      {
+        "name": "Pericarditis",
+        "id": "pericarditis",
+        "probability": 0.061
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0604
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0601
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.0601
+      },
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.0596
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.0556
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-04-larygospasm",
+    "groundTruthId": "larygospasm",
+    "groundTruthName": "Larygospasm",
+    "icd10": "J38.5",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 1,
+    "age": 68,
+    "sex": "F",
+    "initialEvidence": "E_194",
+    "evidences": [
+      "E_79",
+      "E_125",
+      "E_194",
+      "E_204_@_V_10",
+      "E_222"
+    ],
+    "vignette": "68-year-old female; associated with inspiratory stridor; past history / risk factors: smoke cigarettes, ever been diagnosed with gastroesophageal reflux, exposed to secondhand cigarette smoke on a daily basis.",
+    "referenceDifferential": [
+      {
+        "name": "Larygospasm",
+        "id": "larygospasm",
+        "probability": 1.0
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-05-ebola",
+    "groundTruthId": "ebola",
+    "groundTruthName": "Ebola",
+    "icd10": "A98.4",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 1,
+    "age": 14,
+    "sex": "M",
+    "initialEvidence": "E_178",
+    "evidences": [
+      "E_39",
+      "E_51",
+      "E_66",
+      "E_73",
+      "E_89",
+      "E_144",
+      "E_178",
+      "E_204_@_V_1"
+    ],
+    "vignette": "14-year-old male; associated with acute confusion or disorientation, diarrhea / increased stool frequency, significant dyspnea / shortness of breath, chronic fatigue / non-restorative sleep, diffuse myalgias (muscle aches), spontaneous bleeding or ecchymoses; past history / risk factors: in the last month, have you been in contact with anyone infected with the ebola virus.",
+    "referenceDifferential": [
+      {
+        "name": "Ebola",
+        "id": "ebola",
+        "probability": 0.2079
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.1486
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.1359
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.1354
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.1298
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.0957
+      },
+      {
+        "name": "Myasthenia gravis",
+        "id": "myasthenia_gravis",
+        "probability": 0.0957
+      },
+      {
+        "name": "PSVT",
+        "id": "psvt",
+        "probability": 0.0511
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-06-pulmonary_embolism",
+    "groundTruthId": "pulmonary_embolism",
+    "groundTruthName": "Pulmonary embolism",
+    "icd10": "I26",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 2,
+    "age": 51,
+    "sex": "M",
+    "initialEvidence": "E_151",
+    "evidences": [
+      "E_34",
+      "E_45",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_179",
+      "E_55_@_V_29",
+      "E_55_@_V_101",
+      "E_55_@_V_119",
+      "E_55_@_V_160",
+      "E_55_@_V_171",
+      "E_56_@_10",
+      "E_57_@_V_55",
+      "E_57_@_V_56",
+      "E_57_@_V_128",
+      "E_57_@_V_170",
+      "E_57_@_V_171",
+      "E_58_@_7",
+      "E_59_@_9",
+      "E_66",
+      "E_109",
+      "E_151",
+      "E_152_@_V_23",
+      "E_152_@_V_24",
+      "E_152_@_V_120",
+      "E_159",
+      "E_196",
+      "E_204_@_V_10"
+    ],
+    "vignette": "51-year-old male; presenting with sensitive, a knife stroke pain in the lower chest, upper chest, calf(R) (intensity 10/10) radiating to the side of the chest(R), side of the chest(L); associated with hemoptysis (coughing up blood), significant dyspnea / shortness of breath, localized or peripheral edema, syncope / loss of consciousness; past history / risk factors: an active cancer, deep vein thrombosis (dvt), had surgery within the last month.",
+    "referenceDifferential": [
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.0962
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0784
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0776
+      },
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.0747
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.0695
+      },
+      {
+        "name": "Boerhaave",
+        "id": "boerhaave",
+        "probability": 0.0632
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0585
+      },
+      {
+        "name": "Pulmonary neoplasm",
+        "id": "pulmonary_neoplasm",
+        "probability": 0.0584
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-07-acute_dystonic_reactions",
+    "groundTruthId": "acute_dystonic_reactions",
+    "groundTruthName": "Acute dystonic reactions",
+    "icd10": "G24.02",
+    "organSystem": "neurological_psychiatric",
+    "ddxSeverity": 2,
+    "age": 54,
+    "sex": "F",
+    "initialEvidence": "E_66",
+    "evidences": [
+      "E_15",
+      "E_62",
+      "E_66",
+      "E_128",
+      "E_180",
+      "E_192",
+      "E_193",
+      "E_204_@_V_10",
+      "E_205"
+    ],
+    "vignette": "54-year-old female; associated with significant dyspnea / shortness of breath, brief laryngospastic suffocation / aphonia, oculogyric crisis (involuntary eye deviation), acute torticollis / cervical spasm, acute dystonic facial/cervical muscle spasms, trismus / jaw-opening spasm; past history / risk factors: started or taken any antipsychotic medication within the last 7 days, regularly take stimulant drugs.",
+    "referenceDifferential": [
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.1954
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.1218
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.1141
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.1043
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0996
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0984
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0734
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.0734
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-08-guillain_barr_syndrome",
+    "groundTruthId": "guillain_barr_syndrome",
+    "groundTruthName": "Guillain-Barr\u00e9 syndrome",
+    "icd10": "G61.0",
+    "organSystem": "neurological_psychiatric",
+    "ddxSeverity": 2,
+    "age": 43,
+    "sex": "M",
+    "initialEvidence": "E_176",
+    "evidences": [
+      "E_0",
+      "E_66",
+      "E_83",
+      "E_84",
+      "E_93",
+      "E_156",
+      "E_176",
+      "E_177",
+      "E_204_@_V_10"
+    ],
+    "vignette": "43-year-old male; associated with significant dyspnea / shortness of breath, cranial / facial motor weakness, symmetric bilateral limb weakness, distal lower-extremity paresthesias / numbness, unilateral facial weakness / palsy, focal or generalized limb/facial paresis; past history / risk factors: recently had a viral infection.",
+    "referenceDifferential": [
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.1838
+      },
+      {
+        "name": "Myasthenia gravis",
+        "id": "myasthenia_gravis",
+        "probability": 0.134
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.1101
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.1031
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.09
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.0664
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0664
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.0664
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-09-unstable_angina",
+    "groundTruthId": "unstable_angina",
+    "groundTruthName": "Unstable angina",
+    "icd10": "I20.0",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 2,
+    "age": 92,
+    "sex": "M",
+    "initialEvidence": "E_50",
+    "evidences": [
+      "E_14",
+      "E_50",
+      "E_53",
+      "E_54_@_V_154",
+      "E_54_@_V_198",
+      "E_55_@_V_31",
+      "E_55_@_V_55",
+      "E_55_@_V_56",
+      "E_55_@_V_101",
+      "E_55_@_V_159",
+      "E_56_@_4",
+      "E_57_@_V_31",
+      "E_57_@_V_39",
+      "E_57_@_V_163",
+      "E_57_@_V_194",
+      "E_57_@_V_195",
+      "E_58_@_7",
+      "E_59_@_7",
+      "E_69",
+      "E_79",
+      "E_89",
+      "E_105",
+      "E_143",
+      "E_148",
+      "E_204_@_V_10",
+      "E_218",
+      "E_225"
+    ],
+    "vignette": "92-year-old male; presenting with tedious, exhausting pain in the biceps(L), side of the chest(R), side of the chest(L) (intensity 4/10) radiating to the biceps(L), thoracic spine; associated with rest angina / chest pain at rest, diaphoresis / profuse sweating, chronic fatigue / non-restorative sleep, nausea or retching, exertional symptoms relieved by rest; past history / risk factors: diabetes, smoke cigarettes, a heart attack or do you have angina (chest pain), exercise regularly, 4 times per week or more.",
+    "referenceDifferential": [
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.1695
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.1692
+      },
+      {
+        "name": "Boerhaave",
+        "id": "boerhaave",
+        "probability": 0.0977
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.0914
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.0869
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0684
+      },
+      {
+        "name": "Spontaneous pneumothorax",
+        "id": "spontaneous_pneumothorax",
+        "probability": 0.0603
+      },
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.0567
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-10-stable_angina",
+    "groundTruthId": "stable_angina",
+    "groundTruthName": "Stable angina",
+    "icd10": "I20.9",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 2,
+    "age": 51,
+    "sex": "F",
+    "initialEvidence": "E_66",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_154",
+      "E_54_@_V_183",
+      "E_54_@_V_198",
+      "E_55_@_V_29",
+      "E_55_@_V_55",
+      "E_55_@_V_101",
+      "E_55_@_V_159",
+      "E_55_@_V_160",
+      "E_56_@_3",
+      "E_57_@_V_30",
+      "E_57_@_V_33",
+      "E_57_@_V_39",
+      "E_57_@_V_194",
+      "E_57_@_V_195",
+      "E_58_@_8",
+      "E_59_@_4",
+      "E_66",
+      "E_69",
+      "E_70",
+      "E_71",
+      "E_89",
+      "E_104",
+      "E_105",
+      "E_204_@_V_10",
+      "E_218",
+      "E_225"
+    ],
+    "vignette": "51-year-old female; presenting with tedious, heavy pain in the lower chest, side of the chest(R), upper chest (intensity 3/10) radiating to the biceps(R), thyroid cartilage; associated with significant dyspnea / shortness of breath, chronic fatigue / non-restorative sleep, exertional symptoms relieved by rest; past history / risk factors: diabetes, significantly overweight compared to people of the same height as you, high cholesterol or do you take medications to treat high cholesterol, high blood pressure or do you take medications to treat high blood pressure.",
+    "referenceDifferential": [
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.1011
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.0949
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0878
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0844
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0716
+      },
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.0691
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0676
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0644
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-11-epiglottitis",
+    "groundTruthId": "epiglottitis",
+    "groundTruthName": "Epiglottitis",
+    "icd10": "J05.1",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 2,
+    "age": 28,
+    "sex": "F",
+    "initialEvidence": "E_212",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_192",
+      "E_55_@_V_20",
+      "E_55_@_V_21",
+      "E_55_@_V_26",
+      "E_55_@_V_53",
+      "E_55_@_V_137",
+      "E_56_@_6",
+      "E_57_@_V_123",
+      "E_58_@_5",
+      "E_59_@_5",
+      "E_65",
+      "E_66",
+      "E_78",
+      "E_91",
+      "E_104",
+      "E_194",
+      "E_204_@_V_10",
+      "E_209",
+      "E_212"
+    ],
+    "vignette": "28-year-old female; presenting with sharp pain in the tonsil(R), tonsil(L), back of the neck (intensity 6/10); associated with dysphagia / odynophagia, significant dyspnea / shortness of breath, fever (measured or subjective), inspiratory stridor, hoarseness / dysphonia; past history / risk factors: drink alcohol excessively or do you have an addiction to alcohol, high blood pressure or do you take medications to treat high blood pressure, are your vaccinations up to date.",
+    "referenceDifferential": [
+      {
+        "name": "Epiglottitis",
+        "id": "epiglottitis",
+        "probability": 0.14
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.1053
+      },
+      {
+        "name": "Myasthenia gravis",
+        "id": "myasthenia_gravis",
+        "probability": 0.1047
+      },
+      {
+        "name": "Acute laryngitis",
+        "id": "acute_laryngitis",
+        "probability": 0.0983
+      },
+      {
+        "name": "Larygospasm",
+        "id": "larygospasm",
+        "probability": 0.0826
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0774
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0676
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.062
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-12-psvt",
+    "groundTruthId": "psvt",
+    "groundTruthName": "PSVT",
+    "icd10": "I47.1",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 2,
+    "age": 40,
+    "sex": "F",
+    "initialEvidence": "E_66",
+    "evidences": [
+      "E_54_@_V_11",
+      "E_55_@_V_123",
+      "E_56_@_0",
+      "E_57_@_V_123",
+      "E_58_@_0",
+      "E_59_@_0",
+      "E_60",
+      "E_66",
+      "E_155",
+      "E_204_@_V_10"
+    ],
+    "vignette": "40-year-old female; associated with significant dyspnea / shortness of breath, palpitations or tachycardia; past history / risk factors: consume energy drinks regularly.",
+    "referenceDifferential": [
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.2705
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.1905
+      },
+      {
+        "name": "Myasthenia gravis",
+        "id": "myasthenia_gravis",
+        "probability": 0.1905
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.1721
+      },
+      {
+        "name": "PSVT",
+        "id": "psvt",
+        "probability": 0.0882
+      },
+      {
+        "name": "SLE",
+        "id": "sle",
+        "probability": 0.0882
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-13-scombroid_food_poisoning",
+    "groundTruthId": "scombroid_food_poisoning",
+    "groundTruthName": "Scombroid food poisoning",
+    "icd10": "T61.1",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 2,
+    "age": 74,
+    "sex": "M",
+    "initialEvidence": "E_82",
+    "evidences": [
+      "E_66",
+      "E_82",
+      "E_92",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_10",
+      "E_132_@_5",
+      "E_133_@_V_26",
+      "E_133_@_V_30",
+      "E_133_@_V_32",
+      "E_133_@_V_33",
+      "E_133_@_V_35",
+      "E_134_@_3",
+      "E_135_@_V_12",
+      "E_136_@_6",
+      "E_155",
+      "E_187",
+      "E_204_@_V_10"
+    ],
+    "vignette": "74-year-old male; associated with significant dyspnea / shortness of breath, presyncope / severe lightheadedness, acute malar / facial flushing, skin rash or cutaneous lesions, palpitations or tachycardia; past history / risk factors: did you eat dark-fleshed fish (such as tuna) or swiss cheese before the reaction occurred.",
+    "referenceDifferential": [
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.1305
+      },
+      {
+        "name": "PSVT",
+        "id": "psvt",
+        "probability": 0.1074
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.09
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.0891
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0843
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.079
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.077
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.077
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-14-boerhaave",
+    "groundTruthId": "boerhaave",
+    "groundTruthName": "Boerhaave",
+    "icd10": "K22.3",
+    "organSystem": "gastrointestinal_thoracic",
+    "ddxSeverity": 2,
+    "age": 68,
+    "sex": "M",
+    "initialEvidence": "E_210",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_71",
+      "E_54_@_V_193",
+      "E_55_@_V_29",
+      "E_55_@_V_84",
+      "E_55_@_V_101",
+      "E_55_@_V_187",
+      "E_55_@_V_197",
+      "E_56_@_8",
+      "E_57_@_V_39",
+      "E_57_@_V_127",
+      "E_57_@_V_128",
+      "E_58_@_2",
+      "E_59_@_6",
+      "E_66",
+      "E_78",
+      "E_204_@_V_10",
+      "E_210",
+      "E_211"
+    ],
+    "vignette": "68-year-old male; presenting with heartbreaking, sickening pain in the lower chest, flank(R), upper chest (intensity 8/10) radiating to the thoracic spine, scapula(R); associated with significant dyspnea / shortness of breath, hematemesis / coffee-ground emesis, recurrent vomiting or forceful retching; past history / risk factors: drink alcohol excessively or do you have an addiction to alcohol.",
+    "referenceDifferential": [
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.2117
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.1721
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.1561
+      },
+      {
+        "name": "Sarcoidosis",
+        "id": "sarcoidosis",
+        "probability": 0.1278
+      },
+      {
+        "name": "Pancreatic neoplasm",
+        "id": "pancreatic_neoplasm",
+        "probability": 0.1191
+      },
+      {
+        "name": "PSVT",
+        "id": "psvt",
+        "probability": 0.0834
+      },
+      {
+        "name": "Boerhaave",
+        "id": "boerhaave",
+        "probability": 0.0501
+      },
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.0438
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-15-myocarditis",
+    "groundTruthId": "myocarditis",
+    "groundTruthName": "Myocarditis",
+    "icd10": "I51.4",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 2,
+    "age": 22,
+    "sex": "F",
+    "initialEvidence": "E_64",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_179",
+      "E_55_@_V_29",
+      "E_55_@_V_56",
+      "E_55_@_V_101",
+      "E_55_@_V_159",
+      "E_56_@_8",
+      "E_57_@_V_123",
+      "E_58_@_6",
+      "E_59_@_5",
+      "E_64",
+      "E_204_@_V_10",
+      "E_217",
+      "E_218"
+    ],
+    "vignette": "22-year-old female; presenting with sensitive, a knife stroke pain in the lower chest, side of the chest(L), upper chest (intensity 8/10); associated with dyspnea on minimal exertion, orthopnea (worse supine, relieved sitting), exertional symptoms relieved by rest.",
+    "referenceDifferential": [
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.2307
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.206
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.169
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.1245
+      },
+      {
+        "name": "Pericarditis",
+        "id": "pericarditis",
+        "probability": 0.1152
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0826
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.072
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-16-spontaneous_pneumothorax",
+    "groundTruthId": "spontaneous_pneumothorax",
+    "groundTruthName": "Spontaneous pneumothorax",
+    "icd10": "J93",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 2,
+    "age": 27,
+    "sex": "M",
+    "initialEvidence": "E_220",
+    "evidences": [
+      "E_21",
+      "E_53",
+      "E_54_@_V_71",
+      "E_54_@_V_191",
+      "E_55_@_V_56",
+      "E_55_@_V_101",
+      "E_55_@_V_159",
+      "E_55_@_V_160",
+      "E_56_@_6",
+      "E_57_@_V_123",
+      "E_58_@_3",
+      "E_59_@_10",
+      "E_79",
+      "E_123",
+      "E_204_@_V_10",
+      "E_220"
+    ],
+    "vignette": "27-year-old male; presenting with heartbreaking, violent pain in the side of the chest(L), upper chest, breast(R) (intensity 6/10); associated with pleuritic pain (worse on deep inspiration); past history / risk factors: a spontaneous pneumothorax, smoke cigarettes, a chronic obstructive pulmonary disease (copd).",
+    "referenceDifferential": [
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.4334
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.4293
+      },
+      {
+        "name": "Spontaneous pneumothorax",
+        "id": "spontaneous_pneumothorax",
+        "probability": 0.1373
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-17-croup",
+    "groundTruthId": "croup",
+    "groundTruthName": "Croup",
+    "icd10": "J05.0",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 2,
+    "age": 6,
+    "sex": "M",
+    "initialEvidence": "E_219",
+    "evidences": [
+      "E_4",
+      "E_66",
+      "E_91",
+      "E_190",
+      "E_194",
+      "E_202",
+      "E_204_@_V_4",
+      "E_209",
+      "E_219"
+    ],
+    "vignette": "6-year-old male; associated with significant dyspnea / shortness of breath, fever (measured or subjective), sialorrhea / drooling, inspiratory stridor, paroxysmal pertussis-like cough, nocturnal symptom predominance; past history / risk factors: or any member of your family ever had croup, are your vaccinations up to date.",
+    "referenceDifferential": [
+      {
+        "name": "Croup",
+        "id": "croup",
+        "probability": 0.1082
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.0974
+      },
+      {
+        "name": "Epiglottitis",
+        "id": "epiglottitis",
+        "probability": 0.0967
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.0897
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.0753
+      },
+      {
+        "name": "Larygospasm",
+        "id": "larygospasm",
+        "probability": 0.0633
+      },
+      {
+        "name": "Bronchospasm / acute asthma exacerbation",
+        "id": "bronchospasm_acute_asthma_exacerbation",
+        "probability": 0.0526
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0517
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-18-hiv_initial_infection",
+    "groundTruthId": "hiv_initial_infection",
+    "groundTruthName": "HIV (initial infection)",
+    "icd10": "B20",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 3,
+    "age": 52,
+    "sex": "F",
+    "initialEvidence": "E_91",
+    "evidences": [
+      "E_27",
+      "E_50",
+      "E_51",
+      "E_53",
+      "E_54_@_V_154",
+      "E_54_@_V_161",
+      "E_54_@_V_198",
+      "E_55_@_V_26",
+      "E_55_@_V_38",
+      "E_55_@_V_89",
+      "E_55_@_V_166",
+      "E_56_@_5",
+      "E_57_@_V_123",
+      "E_58_@_4",
+      "E_59_@_3",
+      "E_91",
+      "E_115",
+      "E_129",
+      "E_130_@_V_138",
+      "E_131_@_V_10",
+      "E_132_@_3",
+      "E_133_@_V_91",
+      "E_133_@_V_95",
+      "E_133_@_V_96",
+      "E_133_@_V_110",
+      "E_133_@_V_111",
+      "E_134_@_6",
+      "E_135_@_V_12",
+      "E_136_@_0",
+      "E_144",
+      "E_148",
+      "E_189",
+      "E_204_@_V_10"
+    ],
+    "vignette": "52-year-old female; presenting with tedious, sensitive pain in the back of the neck, cervical spine, forehead (intensity 5/10); associated with diaphoresis / profuse sweating, diarrhea / increased stool frequency, fever (measured or subjective), skin rash or cutaneous lesions, diffuse myalgias (muscle aches), nausea or retching; past history / risk factors: a sexually transmitted infection, had unprotected sex with more than one partner in the last 6 months, had sexual intercourse with an hiv-positive partner in the past 12 months.",
+    "referenceDifferential": [
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.4813
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.2906
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.1429
+      },
+      {
+        "name": "Influenza",
+        "id": "influenza",
+        "probability": 0.0852
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-19-pneumonia",
+    "groundTruthId": "pneumonia",
+    "groundTruthName": "Pneumonia",
+    "icd10": "J17, J18",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 18,
+    "sex": "M",
+    "initialEvidence": "E_129",
+    "evidences": [
+      "E_45",
+      "E_53",
+      "E_54_@_V_179",
+      "E_55_@_V_55",
+      "E_55_@_V_170",
+      "E_56_@_4",
+      "E_57_@_V_123",
+      "E_58_@_6",
+      "E_59_@_6",
+      "E_78",
+      "E_91",
+      "E_94",
+      "E_95",
+      "E_106",
+      "E_107",
+      "E_118",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_12",
+      "E_132_@_6",
+      "E_133_@_V_39",
+      "E_133_@_V_40",
+      "E_133_@_V_41",
+      "E_133_@_V_42",
+      "E_133_@_V_83",
+      "E_134_@_1",
+      "E_135_@_V_10",
+      "E_136_@_3",
+      "E_144",
+      "E_201",
+      "E_204_@_V_10",
+      "E_208",
+      "E_219",
+      "E_220"
+    ],
+    "vignette": "18-year-old male; presenting with a knife stroke pain in the side of the chest(R), posterior chest wall(R) (intensity 4/10); associated with hemoptysis (coughing up blood), fever (measured or subjective), chills or rigors, skin rash or cutaneous lesions, diffuse myalgias (muscle aches), cough; past history / risk factors: drink alcohol excessively or do you have an addiction to alcohol, parkinson\u2019s disease, heart failure, a stroke.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1891
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.1736
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.1564
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.1472
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.1224
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.1105
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.1008
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-20-influenza",
+    "groundTruthId": "influenza",
+    "groundTruthName": "Influenza",
+    "icd10": "J11.1",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 3,
+    "age": 45,
+    "sex": "M",
+    "initialEvidence": "E_88",
+    "evidences": [
+      "E_50",
+      "E_53",
+      "E_54_@_V_198",
+      "E_55_@_V_26",
+      "E_55_@_V_53",
+      "E_55_@_V_54",
+      "E_55_@_V_62",
+      "E_55_@_V_89",
+      "E_56_@_4",
+      "E_57_@_V_123",
+      "E_58_@_6",
+      "E_59_@_5",
+      "E_79",
+      "E_88",
+      "E_94",
+      "E_97",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_10",
+      "E_132_@_2",
+      "E_133_@_V_26",
+      "E_133_@_V_53",
+      "E_133_@_V_89",
+      "E_134_@_2",
+      "E_135_@_V_12",
+      "E_136_@_5",
+      "E_144",
+      "E_201",
+      "E_204_@_V_10"
+    ],
+    "vignette": "45-year-old male; presenting with exhausting pain in the back of the neck, side of the neck(R), side of the neck(L) (intensity 4/10); associated with diaphoresis / profuse sweating, severe prostration / bedbound exhaustion, chills or rigors, pharyngitis / sore throat, skin rash or cutaneous lesions, diffuse myalgias (muscle aches); past history / risk factors: smoke cigarettes.",
+    "referenceDifferential": [
+      {
+        "name": "Influenza",
+        "id": "influenza",
+        "probability": 0.1357
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1205
+      },
+      {
+        "name": "URTI",
+        "id": "urti",
+        "probability": 0.1204
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0919
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.0893
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.0841
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.0815
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.0703
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-21-gerd",
+    "groundTruthId": "gerd",
+    "groundTruthName": "GERD",
+    "icd10": "K21",
+    "organSystem": "gastrointestinal_thoracic",
+    "ddxSeverity": 3,
+    "age": 25,
+    "sex": "M",
+    "initialEvidence": "E_201",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_112",
+      "E_54_@_V_161",
+      "E_54_@_V_179",
+      "E_54_@_V_193",
+      "E_55_@_V_29",
+      "E_55_@_V_187",
+      "E_55_@_V_197",
+      "E_56_@_7",
+      "E_57_@_V_29",
+      "E_57_@_V_101",
+      "E_58_@_4",
+      "E_59_@_4",
+      "E_70",
+      "E_79",
+      "E_124",
+      "E_140",
+      "E_173",
+      "E_201",
+      "E_204_@_V_10"
+    ],
+    "vignette": "25-year-old male; presenting with haunting, sensitive pain in the lower chest, belly, epigastric (intensity 7/10) radiating to the lower chest, upper chest; associated with melena (black tarry stools), retrosternal heartburn / acid regurgitation, cough; past history / risk factors: significantly overweight compared to people of the same height as you, smoke cigarettes, asthma or have you ever had to use a bronchodilator in the past.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1655
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.1194
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.1171
+      },
+      {
+        "name": "Spontaneous rib fracture",
+        "id": "spontaneous_rib_fracture",
+        "probability": 0.1101
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.11
+      },
+      {
+        "name": "Boerhaave",
+        "id": "boerhaave",
+        "probability": 0.1038
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0794
+      },
+      {
+        "name": "Pericarditis",
+        "id": "pericarditis",
+        "probability": 0.0728
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-22-cluster_headache",
+    "groundTruthId": "cluster_headache",
+    "groundTruthName": "Cluster headache",
+    "icd10": "G44.009",
+    "organSystem": "neurological_psychiatric",
+    "ddxSeverity": 3,
+    "age": 58,
+    "sex": "F",
+    "initialEvidence": "E_53",
+    "evidences": [
+      "E_25",
+      "E_53",
+      "E_54_@_V_180",
+      "E_54_@_V_191",
+      "E_54_@_V_192",
+      "E_55_@_V_108",
+      "E_55_@_V_125",
+      "E_55_@_V_126",
+      "E_55_@_V_167",
+      "E_56_@_9",
+      "E_57_@_V_123",
+      "E_58_@_10",
+      "E_59_@_8",
+      "E_78",
+      "E_127",
+      "E_181",
+      "E_184",
+      "E_204_@_V_10"
+    ],
+    "vignette": "58-year-old female; presenting with tugging, violent pain in the cheek(R), eye(R), eye(L) (intensity 9/10); associated with excessive lacrimation / tearing, nasal congestion or clear rhinorrhea; past history / risk factors: have any of your family members been diagnosed with cluster headaches, drink alcohol excessively or do you have an addiction to alcohol, take medication that dilates your blood vessels.",
+    "referenceDifferential": [
+      {
+        "name": "Cluster headache",
+        "id": "cluster_headache",
+        "probability": 0.5925
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.2037
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.2037
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-23-atrial_fibrillation",
+    "groundTruthId": "atrial_fibrillation",
+    "groundTruthName": "Atrial fibrillation",
+    "icd10": "I48.91",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 3,
+    "age": 4,
+    "sex": "M",
+    "initialEvidence": "E_155",
+    "evidences": [
+      "E_22",
+      "E_31",
+      "E_66",
+      "E_69",
+      "E_76",
+      "E_104",
+      "E_105",
+      "E_139",
+      "E_155",
+      "E_164",
+      "E_204_@_V_10"
+    ],
+    "vignette": "4-year-old male; associated with significant dyspnea / shortness of breath, mild dizziness / lightheadedness, palpitations or tachycardia, chaotic / irregularly irregular heart rhythm; past history / risk factors: a known issue with one of your heart valves, severe chronic obstructive pulmonary disease (copd), diabetes, high blood pressure or do you take medications to treat high blood pressure.",
+    "referenceDifferential": [
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.1691
+      },
+      {
+        "name": "PSVT",
+        "id": "psvt",
+        "probability": 0.1258
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.1207
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.1103
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.1041
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.0777
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.0777
+      },
+      {
+        "name": "Myasthenia gravis",
+        "id": "myasthenia_gravis",
+        "probability": 0.0777
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-24-inguinal_hernia",
+    "groundTruthId": "inguinal_hernia",
+    "groundTruthName": "Inguinal hernia",
+    "icd10": "K40",
+    "organSystem": "gastrointestinal_thoracic",
+    "ddxSeverity": 3,
+    "age": 7,
+    "sex": "M",
+    "initialEvidence": "E_53",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_183",
+      "E_55_@_V_87",
+      "E_55_@_V_99",
+      "E_55_@_V_168",
+      "E_55_@_V_169",
+      "E_56_@_1",
+      "E_57_@_V_123",
+      "E_58_@_4",
+      "E_59_@_5",
+      "E_70",
+      "E_129",
+      "E_130_@_V_138",
+      "E_131_@_V_10",
+      "E_132_@_4",
+      "E_133_@_V_87",
+      "E_133_@_V_88",
+      "E_134_@_7",
+      "E_135_@_V_12",
+      "E_136_@_0",
+      "E_150",
+      "E_160",
+      "E_203",
+      "E_204_@_V_10",
+      "E_221"
+    ],
+    "vignette": "7-year-old male; presenting with heavy pain in the iliac fossa(R), hip(R), testicle(R) (intensity 1/10); associated with skin rash or cutaneous lesions, obstipation (inability to pass flatus/stool), paroxysmal coughing fits, pain worse with valsalva / cough / lifting; past history / risk factors: significantly overweight compared to people of the same height as you, were you born prematurely or did you suffer any complication at birth.",
+    "referenceDifferential": [
+      {
+        "name": "Inguinal hernia",
+        "id": "inguinal_hernia",
+        "probability": 0.2603
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.2067
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.1513
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.1511
+      },
+      {
+        "name": "Whooping cough",
+        "id": "whooping_cough",
+        "probability": 0.141
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.0896
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-25-pancreatic_neoplasm",
+    "groundTruthId": "pancreatic_neoplasm",
+    "groundTruthName": "Pancreatic neoplasm",
+    "icd10": "C25",
+    "organSystem": "gastrointestinal_thoracic",
+    "ddxSeverity": 3,
+    "age": 42,
+    "sex": "F",
+    "initialEvidence": "E_53",
+    "evidences": [
+      "E_6",
+      "E_51",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_182",
+      "E_55_@_V_85",
+      "E_55_@_V_197",
+      "E_56_@_4",
+      "E_57_@_V_39",
+      "E_58_@_0",
+      "E_59_@_0",
+      "E_70",
+      "E_79",
+      "E_89",
+      "E_129",
+      "E_130_@_V_107",
+      "E_131_@_V_10",
+      "E_132_@_2",
+      "E_133_@_V_197",
+      "E_134_@_2",
+      "E_135_@_V_12",
+      "E_136_@_4",
+      "E_148",
+      "E_204_@_V_10",
+      "E_223"
+    ],
+    "vignette": "42-year-old female; presenting with sensitive, a cramp pain in the flank(L), epigastric (intensity 4/10) radiating to the thoracic spine; associated with diarrhea / increased stool frequency, chronic fatigue / non-restorative sleep, skin rash or cutaneous lesions, nausea or retching; past history / risk factors: chronic pancreatitis, significantly overweight compared to people of the same height as you, smoke cigarettes, are there members of your family who have been diagnosed with pancreatic cancer.",
+    "referenceDifferential": [
+      {
+        "name": "Pancreatic neoplasm",
+        "id": "pancreatic_neoplasm",
+        "probability": 0.3839
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.272
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.2467
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.0973
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-26-bronchiectasis",
+    "groundTruthId": "bronchiectasis",
+    "groundTruthName": "Bronchiectasis",
+    "icd10": "J47",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 46,
+    "sex": "F",
+    "initialEvidence": "E_45",
+    "evidences": [
+      "E_17",
+      "E_18",
+      "E_20",
+      "E_45",
+      "E_47",
+      "E_77",
+      "E_124",
+      "E_201",
+      "E_204_@_V_10",
+      "E_227"
+    ],
+    "vignette": "46-year-old female; associated with hemoptysis (coughing up blood), productive purulent sputum cough, cough; past history / risk factors: of asian descent, cystic fibrosis, rheumatoid arthritis, suffer from crohn\u2019s disease or ulcerative colitis (uc).",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.2508
+      },
+      {
+        "name": "Bronchiectasis",
+        "id": "bronchiectasis",
+        "probability": 0.1932
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.1665
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.1581
+      },
+      {
+        "name": "Pulmonary neoplasm",
+        "id": "pulmonary_neoplasm",
+        "probability": 0.1521
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.0793
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-27-myasthenia_gravis",
+    "groundTruthId": "myasthenia_gravis",
+    "groundTruthName": "Myasthenia gravis",
+    "icd10": "G70.0",
+    "organSystem": "neurological_psychiatric",
+    "ddxSeverity": 3,
+    "age": 53,
+    "sex": "M",
+    "initialEvidence": "E_38",
+    "evidences": [
+      "E_38",
+      "E_63",
+      "E_65",
+      "E_66",
+      "E_84",
+      "E_172",
+      "E_204_@_V_10"
+    ],
+    "vignette": "53-year-old male; associated with jaw claudication / weakness, dysarthria / slurred speech, dysphagia / odynophagia, significant dyspnea / shortness of breath, symmetric bilateral limb weakness, ptosis (drooping eyelids).",
+    "referenceDifferential": [
+      {
+        "name": "Myasthenia gravis",
+        "id": "myasthenia_gravis",
+        "probability": 0.2025
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.1356
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.127
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.127
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.1109
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.0818
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0818
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.0818
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-28-bronchospasm_acute_asthma_exacerbation",
+    "groundTruthId": "bronchospasm_acute_asthma_exacerbation",
+    "groundTruthName": "Bronchospasm / acute asthma exacerbation",
+    "icd10": "J45",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 37,
+    "sex": "M",
+    "initialEvidence": "E_201",
+    "evidences": [
+      "E_66",
+      "E_87",
+      "E_116",
+      "E_124",
+      "E_201",
+      "E_204_@_V_10",
+      "E_207",
+      "E_214",
+      "E_222",
+      "E_226"
+    ],
+    "vignette": "37-year-old male; associated with significant dyspnea / shortness of breath, cough, expiratory wheezing; past history / risk factors: any family members who have asthma, had a cold in the last 2 weeks, asthma or have you ever had to use a bronchodilator in the past, live in in a big city.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchospasm / acute asthma exacerbation",
+        "id": "bronchospasm_acute_asthma_exacerbation",
+        "probability": 0.0968
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.0839
+      },
+      {
+        "name": "Pulmonary neoplasm",
+        "id": "pulmonary_neoplasm",
+        "probability": 0.0782
+      },
+      {
+        "name": "Acute COPD exacerbation / infection",
+        "id": "acute_copd_exacerbation_infection",
+        "probability": 0.0733
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.0617
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.0589
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.0566
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0552
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-29-acute_copd_exacerbation_infection",
+    "groundTruthId": "acute_copd_exacerbation_infection",
+    "groundTruthName": "Acute COPD exacerbation / infection",
+    "icd10": "J44.1",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 78,
+    "sex": "M",
+    "initialEvidence": "E_66",
+    "evidences": [
+      "E_31",
+      "E_66",
+      "E_72",
+      "E_77",
+      "E_79",
+      "E_123",
+      "E_125",
+      "E_198",
+      "E_200",
+      "E_201",
+      "E_204_@_V_10"
+    ],
+    "vignette": "78-year-old male; associated with significant dyspnea / shortness of breath, productive purulent sputum cough, cough; past history / risk factors: severe chronic obstructive pulmonary disease (copd), had one or several flare ups of chronic obstructive pulmonary disease (copd) in the past year, smoke cigarettes, a chronic obstructive pulmonary disease (copd).",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1126
+      },
+      {
+        "name": "Bronchiectasis",
+        "id": "bronchiectasis",
+        "probability": 0.1051
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.1023
+      },
+      {
+        "name": "Pulmonary neoplasm",
+        "id": "pulmonary_neoplasm",
+        "probability": 0.0937
+      },
+      {
+        "name": "Acute COPD exacerbation / infection",
+        "id": "acute_copd_exacerbation_infection",
+        "probability": 0.0845
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.0604
+      },
+      {
+        "name": "Bronchospasm / acute asthma exacerbation",
+        "id": "bronchospasm_acute_asthma_exacerbation",
+        "probability": 0.0587
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0577
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-30-tuberculosis",
+    "groundTruthId": "tuberculosis",
+    "groundTruthName": "Tuberculosis",
+    "icd10": "A15",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 52,
+    "sex": "M",
+    "initialEvidence": "E_162",
+    "evidences": [
+      "E_44",
+      "E_69",
+      "E_91",
+      "E_162",
+      "E_201",
+      "E_204_@_V_10",
+      "E_208"
+    ],
+    "vignette": "52-year-old male; associated with fever (measured or subjective), unintentional weight loss (>3 months), cough; past history / risk factors: take corticosteroids, diabetes, is your bmi less than 18.5, or are you underweight.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.4447
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.3505
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.1693
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.0354
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-31-pulmonary_neoplasm",
+    "groundTruthId": "pulmonary_neoplasm",
+    "groundTruthName": "Pulmonary neoplasm",
+    "icd10": "C34",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 62,
+    "sex": "M",
+    "initialEvidence": "E_89",
+    "evidences": [
+      "E_45",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_179",
+      "E_55_@_V_170",
+      "E_55_@_V_171",
+      "E_56_@_1",
+      "E_57_@_V_123",
+      "E_58_@_4",
+      "E_59_@_1",
+      "E_66",
+      "E_79",
+      "E_89",
+      "E_161",
+      "E_162",
+      "E_204_@_V_10",
+      "E_222"
+    ],
+    "vignette": "62-year-old male; presenting with sensitive, a knife stroke pain in the posterior chest wall(R), posterior chest wall(L) (intensity 1/10); associated with hemoptysis (coughing up blood), significant dyspnea / shortness of breath, chronic fatigue / non-restorative sleep, anorexia or early satiety, unintentional weight loss (>3 months); past history / risk factors: smoke cigarettes, exposed to secondhand cigarette smoke on a daily basis.",
+    "referenceDifferential": [
+      {
+        "name": "Pulmonary neoplasm",
+        "id": "pulmonary_neoplasm",
+        "probability": 0.1313
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.11
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.1026
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.0949
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.0853
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0738
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0718
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.0691
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-32-chagas",
+    "groundTruthId": "chagas",
+    "groundTruthName": "Chagas",
+    "icd10": "B57",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 3,
+    "age": 9,
+    "sex": "F",
+    "initialEvidence": "E_175",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_180",
+      "E_54_@_V_192",
+      "E_54_@_V_198",
+      "E_55_@_V_25",
+      "E_55_@_V_38",
+      "E_55_@_V_62",
+      "E_55_@_V_89",
+      "E_55_@_V_166",
+      "E_56_@_2",
+      "E_57_@_V_123",
+      "E_58_@_2",
+      "E_59_@_3",
+      "E_66",
+      "E_91",
+      "E_152_@_V_123",
+      "E_175",
+      "E_204_@_V_10"
+    ],
+    "vignette": "9-year-old female; presenting with sensitive, tugging pain in the back of head, cervical spine, top of the head (intensity 2/10); associated with significant dyspnea / shortness of breath, fever (measured or subjective), viral prodrome / malaise & myalgia.",
+    "referenceDifferential": [
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.3245
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.2607
+      },
+      {
+        "name": "Croup",
+        "id": "croup",
+        "probability": 0.2161
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.1367
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.0619
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-33-spontaneous_rib_fracture",
+    "groundTruthId": "spontaneous_rib_fracture",
+    "groundTruthName": "Spontaneous rib fracture",
+    "icd10": "S22.9",
+    "organSystem": "gastrointestinal_thoracic",
+    "ddxSeverity": 3,
+    "age": 32,
+    "sex": "M",
+    "initialEvidence": "E_203",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_71",
+      "E_54_@_V_112",
+      "E_54_@_V_191",
+      "E_54_@_V_192",
+      "E_55_@_V_55",
+      "E_55_@_V_56",
+      "E_55_@_V_159",
+      "E_55_@_V_160",
+      "E_55_@_V_171",
+      "E_56_@_6",
+      "E_57_@_V_171",
+      "E_58_@_10",
+      "E_59_@_8",
+      "E_153",
+      "E_201",
+      "E_203",
+      "E_204_@_V_10",
+      "E_216",
+      "E_220"
+    ],
+    "vignette": "32-year-old male; presenting with heartbreaking, haunting pain in the side of the chest(R), side of the chest(L), breast(R) (intensity 6/10) radiating to the posterior chest wall(L); associated with cough, paroxysmal coughing fits, pain exacerbated by movement, pleuritic pain (worse on deep inspiration); past history / risk factors: being treated for osteoporosis.",
+    "referenceDifferential": [
+      {
+        "name": "Spontaneous rib fracture",
+        "id": "spontaneous_rib_fracture",
+        "probability": 0.2055
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1874
+      },
+      {
+        "name": "Whooping cough",
+        "id": "whooping_cough",
+        "probability": 0.1328
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.1277
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.1264
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.1186
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.0612
+      },
+      {
+        "name": "Spontaneous pneumothorax",
+        "id": "spontaneous_pneumothorax",
+        "probability": 0.0404
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-34-bronchiolitis",
+    "groundTruthId": "bronchiolitis",
+    "groundTruthName": "Bronchiolitis",
+    "icd10": "J21",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 1,
+    "sex": "M",
+    "initialEvidence": "E_32",
+    "evidences": [
+      "E_23",
+      "E_32",
+      "E_48",
+      "E_66",
+      "E_91",
+      "E_142",
+      "E_181",
+      "E_183",
+      "E_204_@_V_10",
+      "E_209",
+      "E_214"
+    ],
+    "vignette": "1-year-old male; associated with sleep apnea episodes, decreased appetite, significant dyspnea / shortness of breath, fever (measured or subjective), nasal congestion or clear rhinorrhea, expiratory wheezing; past history / risk factors: live with 4 or more people, does your mother suffer from asthma, live in a rural area, are your vaccinations up to date.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchiolitis",
+        "id": "bronchiolitis",
+        "probability": 0.1582
+      },
+      {
+        "name": "Acute otitis media",
+        "id": "acute_otitis_media",
+        "probability": 0.1126
+      },
+      {
+        "name": "Croup",
+        "id": "croup",
+        "probability": 0.1126
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.1043
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0841
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.062
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.062
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.062
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-35-viral_pharyngitis",
+    "groundTruthId": "viral_pharyngitis",
+    "groundTruthName": "Viral pharyngitis",
+    "icd10": "J02.9",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 4,
+    "age": 40,
+    "sex": "M",
+    "initialEvidence": "E_201",
+    "evidences": [
+      "E_48",
+      "E_49",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_181",
+      "E_55_@_V_20",
+      "E_55_@_V_21",
+      "E_56_@_9",
+      "E_57_@_V_123",
+      "E_58_@_7",
+      "E_59_@_0",
+      "E_79",
+      "E_181",
+      "E_201",
+      "E_204_@_V_10"
+    ],
+    "vignette": "40-year-old male; presenting with sensitive, burning pain in the tonsil(R), tonsil(L) (intensity 9/10); associated with nasal congestion or clear rhinorrhea, cough; past history / risk factors: live with 4 or more people, attend or work in a daycare, smoke cigarettes.",
+    "referenceDifferential": [
+      {
+        "name": "Viral pharyngitis",
+        "id": "viral_pharyngitis",
+        "probability": 0.3919
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.3489
+      },
+      {
+        "name": "URTI",
+        "id": "urti",
+        "probability": 0.2592
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-36-anemia",
+    "groundTruthId": "anemia",
+    "groundTruthName": "Anemia",
+    "icd10": "D64.9",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 20,
+    "sex": "M",
+    "initialEvidence": "E_53",
+    "evidences": [
+      "E_7",
+      "E_24",
+      "E_26",
+      "E_53",
+      "E_54_@_V_180",
+      "E_54_@_V_182",
+      "E_55_@_V_25",
+      "E_55_@_V_62",
+      "E_55_@_V_89",
+      "E_56_@_3",
+      "E_57_@_V_123",
+      "E_58_@_6",
+      "E_59_@_1",
+      "E_66",
+      "E_76",
+      "E_82",
+      "E_146",
+      "E_204_@_V_10"
+    ],
+    "vignette": "20-year-old male; presenting with tugging, a cramp pain in the back of head, top of the head, forehead (intensity 3/10); associated with significant dyspnea / shortness of breath, mild dizziness / lightheadedness, presyncope / severe lightheadedness; past history / risk factors: a poor diet, a diagnosis of anemia, any family members who have been diagnosed with anemia, taking any new oral anticoagulants ((noacs).",
+    "referenceDifferential": [
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.3244
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.1612
+      },
+      {
+        "name": "Cluster headache",
+        "id": "cluster_headache",
+        "probability": 0.1575
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.1514
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.135
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0485
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.011
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.011
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-37-localized_edema",
+    "groundTruthId": "localized_edema",
+    "groundTruthName": "Localized edema",
+    "icd10": "R60.0",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 79,
+    "sex": "F",
+    "initialEvidence": "E_151",
+    "evidences": [
+      "E_10",
+      "E_22",
+      "E_44",
+      "E_53",
+      "E_54_@_V_161",
+      "E_55_@_V_35",
+      "E_55_@_V_51",
+      "E_55_@_V_52",
+      "E_55_@_V_72",
+      "E_55_@_V_73",
+      "E_56_@_7",
+      "E_57_@_V_123",
+      "E_58_@_2",
+      "E_59_@_5",
+      "E_96",
+      "E_126",
+      "E_137",
+      "E_151",
+      "E_152_@_V_34",
+      "E_152_@_V_35",
+      "E_152_@_V_72",
+      "E_152_@_V_73",
+      "E_152_@_V_149",
+      "E_158",
+      "E_197",
+      "E_204_@_V_10"
+    ],
+    "vignette": "79-year-old female; presenting with sensitive pain in the ankle(L), thigh(R), thigh(L) (intensity 7/10); associated with recent weight gain / fluid retention, localized or peripheral edema; past history / risk factors: currently taking or have you recently taken anti-inflammatory drugs (nsaids), a known issue with one of your heart valves, take corticosteroids, liver cirrhosis.",
+    "referenceDifferential": [
+      {
+        "name": "Localized edema",
+        "id": "localized_edema",
+        "probability": 0.3701
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.2681
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.2573
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.1023
+      },
+      {
+        "name": "SLE",
+        "id": "sle",
+        "probability": 0.0022
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-38-bronchitis",
+    "groundTruthId": "bronchitis",
+    "groundTruthName": "Bronchitis",
+    "icd10": "J40",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 4,
+    "age": 33,
+    "sex": "M",
+    "initialEvidence": "E_91",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_161",
+      "E_55_@_V_55",
+      "E_55_@_V_101",
+      "E_55_@_V_160",
+      "E_56_@_1",
+      "E_57_@_V_123",
+      "E_58_@_2",
+      "E_59_@_2",
+      "E_77",
+      "E_79",
+      "E_91",
+      "E_201",
+      "E_204_@_V_10",
+      "E_214"
+    ],
+    "vignette": "33-year-old male; presenting with sensitive pain in the side of the chest(R), upper chest, breast(L) (intensity 1/10); associated with productive purulent sputum cough, fever (measured or subjective), cough, expiratory wheezing; past history / risk factors: smoke cigarettes.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1622
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.1472
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.1202
+      },
+      {
+        "name": "Acute COPD exacerbation / infection",
+        "id": "acute_copd_exacerbation_infection",
+        "probability": 0.1183
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.0877
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0871
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.0817
+      },
+      {
+        "name": "Bronchiectasis",
+        "id": "bronchiectasis",
+        "probability": 0.0748
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-39-acute_otitis_media",
+    "groundTruthId": "acute_otitis_media",
+    "groundTruthName": "Acute otitis media",
+    "icd10": "H66.90",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 4,
+    "age": 15,
+    "sex": "M",
+    "initialEvidence": "E_181",
+    "evidences": [
+      "E_1",
+      "E_53",
+      "E_54_@_V_161",
+      "E_55_@_V_129",
+      "E_55_@_V_130",
+      "E_56_@_5",
+      "E_57_@_V_123",
+      "E_58_@_10",
+      "E_59_@_5",
+      "E_114",
+      "E_181",
+      "E_204_@_V_10"
+    ],
+    "vignette": "15-year-old male; presenting with sensitive pain in the ear(R), ear(L) (intensity 5/10); associated with irritability or mood lability, nasal congestion or clear rhinorrhea; past history / risk factors: currently being treated or have you recently been treated with an oral antibiotic for an ear infection.",
+    "referenceDifferential": [
+      {
+        "name": "Acute otitis media",
+        "id": "acute_otitis_media",
+        "probability": 1.0
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-40-acute_laryngitis",
+    "groundTruthId": "acute_laryngitis",
+    "groundTruthName": "Acute laryngitis",
+    "icd10": "J04.0",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 4,
+    "age": 16,
+    "sex": "F",
+    "initialEvidence": "E_212",
+    "evidences": [
+      "E_48",
+      "E_49",
+      "E_53",
+      "E_54_@_V_181",
+      "E_55_@_V_33",
+      "E_55_@_V_148",
+      "E_55_@_V_163",
+      "E_56_@_2",
+      "E_57_@_V_123",
+      "E_58_@_4",
+      "E_59_@_4",
+      "E_79",
+      "E_116",
+      "E_204_@_V_10",
+      "E_212"
+    ],
+    "vignette": "16-year-old female; presenting with burning pain in the thyroid cartilage, pharynx, under the jaw (intensity 2/10); associated with hoarseness / dysphonia; past history / risk factors: live with 4 or more people, attend or work in a daycare, smoke cigarettes, had a cold in the last 2 weeks.",
+    "referenceDifferential": [
+      {
+        "name": "Acute laryngitis",
+        "id": "acute_laryngitis",
+        "probability": 0.8655
+      },
+      {
+        "name": "Viral pharyngitis",
+        "id": "viral_pharyngitis",
+        "probability": 0.1345
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-41-pericarditis",
+    "groundTruthId": "pericarditis",
+    "groundTruthName": "Pericarditis",
+    "icd10": "I30",
+    "organSystem": "cardiovascular",
+    "ddxSeverity": 4,
+    "age": 93,
+    "sex": "F",
+    "initialEvidence": "E_66",
+    "evidences": [
+      "E_0",
+      "E_3",
+      "E_53",
+      "E_54_@_V_192",
+      "E_55_@_V_29",
+      "E_55_@_V_160",
+      "E_55_@_V_197",
+      "E_56_@_4",
+      "E_57_@_V_39",
+      "E_58_@_2",
+      "E_59_@_5",
+      "E_66",
+      "E_155",
+      "E_204_@_V_10",
+      "E_220"
+    ],
+    "vignette": "93-year-old female; presenting with sharp pain in the lower chest, breast(L), epigastric (intensity 4/10) radiating to the thoracic spine; associated with significant dyspnea / shortness of breath, palpitations or tachycardia, pleuritic pain (worse on deep inspiration); past history / risk factors: recently had a viral infection, a pericarditis.",
+    "referenceDifferential": [
+      {
+        "name": "Pericarditis",
+        "id": "pericarditis",
+        "probability": 0.1059
+      },
+      {
+        "name": "Spontaneous pneumothorax",
+        "id": "spontaneous_pneumothorax",
+        "probability": 0.1031
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.102
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0891
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.0747
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0737
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.0706
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.0683
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-42-sarcoidosis",
+    "groundTruthId": "sarcoidosis",
+    "groundTruthName": "Sarcoidosis",
+    "icd10": "D86",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 16,
+    "sex": "M",
+    "initialEvidence": "E_53",
+    "evidences": [
+      "E_9",
+      "E_43",
+      "E_53",
+      "E_54_@_V_192",
+      "E_55_@_V_64",
+      "E_55_@_V_66",
+      "E_55_@_V_68",
+      "E_55_@_V_69",
+      "E_55_@_V_74",
+      "E_56_@_6",
+      "E_57_@_V_123",
+      "E_58_@_7",
+      "E_59_@_5",
+      "E_70",
+      "E_74",
+      "E_130_@_V_11",
+      "E_131_@_V_10",
+      "E_132_@_0",
+      "E_133_@_V_123",
+      "E_134_@_0",
+      "E_135_@_V_10",
+      "E_136_@_0",
+      "E_204_@_V_10"
+    ],
+    "vignette": "16-year-old male; presenting with sharp pain in the finger (ring finger)(L), finger (little finger)(L), finger (index)(L) (intensity 6/10); associated with tender or enlarged lymphadenopathy, generalized tonic-clonic seizure or absence, conjunctival or ocular erythema; past history / risk factors: significantly overweight compared to people of the same height as you.",
+    "referenceDifferential": [
+      {
+        "name": "Sarcoidosis",
+        "id": "sarcoidosis",
+        "probability": 1.0
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-43-allergic_sinusitis",
+    "groundTruthId": "allergic_sinusitis",
+    "groundTruthName": "Allergic sinusitis",
+    "icd10": "J30",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 4,
+    "age": 66,
+    "sex": "F",
+    "initialEvidence": "E_169",
+    "evidences": [
+      "E_86",
+      "E_124",
+      "E_169",
+      "E_170",
+      "E_181",
+      "E_204_@_V_10",
+      "E_226"
+    ],
+    "vignette": "66-year-old female; associated with nasal or pharyngeal pruritus, severe ocular pruritus (itchy eyes), nasal congestion or clear rhinorrhea; past history / risk factors: any close family members who suffer from allergies (any type), hay fever or eczema, asthma or have you ever had to use a bronchodilator in the past, more likely to develop common allergies than the general population.",
+    "referenceDifferential": [
+      {
+        "name": "Allergic sinusitis",
+        "id": "allergic_sinusitis",
+        "probability": 1.0
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-44-acute_rhinosinusitis",
+    "groundTruthId": "acute_rhinosinusitis",
+    "groundTruthName": "Acute rhinosinusitis",
+    "icd10": "J01",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 4,
+    "age": 75,
+    "sex": "M",
+    "initialEvidence": "E_182",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_181",
+      "E_55_@_V_32",
+      "E_55_@_V_89",
+      "E_55_@_V_108",
+      "E_55_@_V_109",
+      "E_55_@_V_122",
+      "E_56_@_8",
+      "E_57_@_V_89",
+      "E_57_@_V_122",
+      "E_57_@_V_166",
+      "E_57_@_V_167",
+      "E_58_@_4",
+      "E_59_@_0",
+      "E_79",
+      "E_91",
+      "E_103",
+      "E_116",
+      "E_120",
+      "E_124",
+      "E_182",
+      "E_201",
+      "E_204_@_V_10",
+      "E_226"
+    ],
+    "vignette": "75-year-old male; presenting with burning pain in the mouth, forehead, cheek(R) (intensity 8/10) radiating to the forehead, nose; associated with fever (measured or subjective), anosmia / hyposmia (loss of smell), purulent green/yellow rhinorrhea, cough; past history / risk factors: smoke cigarettes, had a cold in the last 2 weeks, polyps in your nose, asthma or have you ever had to use a bronchodilator in the past.",
+    "referenceDifferential": [
+      {
+        "name": "Acute rhinosinusitis",
+        "id": "acute_rhinosinusitis",
+        "probability": 0.1499
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1318
+      },
+      {
+        "name": "Chronic rhinosinusitis",
+        "id": "chronic_rhinosinusitis",
+        "probability": 0.1316
+      },
+      {
+        "name": "Influenza",
+        "id": "influenza",
+        "probability": 0.119
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.0939
+      },
+      {
+        "name": "Acute laryngitis",
+        "id": "acute_laryngitis",
+        "probability": 0.0905
+      },
+      {
+        "name": "Viral pharyngitis",
+        "id": "viral_pharyngitis",
+        "probability": 0.0813
+      },
+      {
+        "name": "Epiglottitis",
+        "id": "epiglottitis",
+        "probability": 0.0674
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-45-sle",
+    "groundTruthId": "sle",
+    "groundTruthName": "SLE",
+    "icd10": "M34",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 79,
+    "sex": "M",
+    "initialEvidence": "E_206",
+    "evidences": [
+      "E_3",
+      "E_53",
+      "E_54_@_V_192",
+      "E_55_@_V_26",
+      "E_55_@_V_74",
+      "E_55_@_V_75",
+      "E_55_@_V_80",
+      "E_55_@_V_194",
+      "E_56_@_6",
+      "E_57_@_V_123",
+      "E_58_@_5",
+      "E_59_@_3",
+      "E_79",
+      "E_89",
+      "E_129",
+      "E_130_@_V_157",
+      "E_131_@_V_10",
+      "E_132_@_1",
+      "E_133_@_V_108",
+      "E_133_@_V_109",
+      "E_133_@_V_122",
+      "E_135_@_V_12",
+      "E_136_@_0",
+      "E_204_@_V_10",
+      "E_206"
+    ],
+    "vignette": "79-year-old male; presenting with sharp pain in the back of the neck, dorsal aspect of the wrist(R), dorsal aspect of the wrist(L) (intensity 6/10); associated with chronic fatigue / non-restorative sleep, skin rash or cutaneous lesions, painful oral / mucosal ulcers; past history / risk factors: a pericarditis, smoke cigarettes.",
+    "referenceDifferential": [
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.2091
+      },
+      {
+        "name": "SLE",
+        "id": "sle",
+        "probability": 0.1916
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.1396
+      },
+      {
+        "name": "Pancreatic neoplasm",
+        "id": "pancreatic_neoplasm",
+        "probability": 0.1223
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.1194
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.1192
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0961
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.0026
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-46-whooping_cough",
+    "groundTruthId": "whooping_cough",
+    "groundTruthName": "Whooping cough",
+    "icd10": "A37",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 4,
+    "age": 8,
+    "sex": "F",
+    "initialEvidence": "E_166",
+    "evidences": [
+      "E_40",
+      "E_124",
+      "E_166",
+      "E_204_@_V_10",
+      "E_209"
+    ],
+    "vignette": "8-year-old female; associated with post-tussive emesis; past history / risk factors: been in contact with someone who has had pertussis (whoooping cough), asthma or have you ever had to use a bronchodilator in the past, are your vaccinations up to date.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.4708
+      },
+      {
+        "name": "Whooping cough",
+        "id": "whooping_cough",
+        "probability": 0.3013
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.2279
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-47-urti",
+    "groundTruthId": "urti",
+    "groundTruthName": "URTI",
+    "icd10": "J06.9",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 5,
+    "age": 35,
+    "sex": "M",
+    "initialEvidence": "E_91",
+    "evidences": [
+      "E_54_@_V_11",
+      "E_55_@_V_123",
+      "E_56_@_0",
+      "E_57_@_V_123",
+      "E_58_@_0",
+      "E_59_@_0",
+      "E_79",
+      "E_91",
+      "E_181",
+      "E_201",
+      "E_204_@_V_10",
+      "E_222"
+    ],
+    "vignette": "35-year-old male; associated with fever (measured or subjective), nasal congestion or clear rhinorrhea, cough; past history / risk factors: smoke cigarettes, exposed to secondhand cigarette smoke on a daily basis.",
+    "referenceDifferential": [
+      {
+        "name": "URTI",
+        "id": "urti",
+        "probability": 0.3189
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.3065
+      },
+      {
+        "name": "Influenza",
+        "id": "influenza",
+        "probability": 0.1716
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.1618
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.0412
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-48-panic_attack",
+    "groundTruthId": "panic_attack",
+    "groundTruthName": "Panic attack",
+    "icd10": "F41",
+    "organSystem": "neurological_psychiatric",
+    "ddxSeverity": 5,
+    "age": 32,
+    "sex": "F",
+    "initialEvidence": "E_155",
+    "evidences": [
+      "E_16",
+      "E_53",
+      "E_54_@_V_182",
+      "E_54_@_V_192",
+      "E_55_@_V_55",
+      "E_55_@_V_56",
+      "E_55_@_V_84",
+      "E_55_@_V_103",
+      "E_55_@_V_153",
+      "E_56_@_3",
+      "E_57_@_V_123",
+      "E_58_@_6",
+      "E_59_@_5",
+      "E_66",
+      "E_75",
+      "E_80",
+      "E_81",
+      "E_111",
+      "E_138",
+      "E_155",
+      "E_157",
+      "E_171",
+      "E_185",
+      "E_204_@_V_10"
+    ],
+    "vignette": "32-year-old female; presenting with a cramp, sharp pain in the side of the chest(R), side of the chest(L), flank(R) (intensity 3/10); associated with significant dyspnea / shortness of breath, choking or suffocation sensation, angor animi / acute fear of dying, palpitations or tachycardia, symmetric acral & perioral paresthesias, depersonalization / derealization; past history / risk factors: feel anxious, ever been diagnosed with depression, suffer from chronic anxiety, suffer from fibromyalgia.",
+    "referenceDifferential": [
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.1078
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.0846
+      },
+      {
+        "name": "PSVT",
+        "id": "psvt",
+        "probability": 0.0772
+      },
+      {
+        "name": "Spontaneous pneumothorax",
+        "id": "spontaneous_pneumothorax",
+        "probability": 0.0741
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0698
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0695
+      },
+      {
+        "name": "Pulmonary embolism",
+        "id": "pulmonary_embolism",
+        "probability": 0.0609
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0595
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-49-chronic_rhinosinusitis",
+    "groundTruthId": "chronic_rhinosinusitis",
+    "groundTruthName": "Chronic rhinosinusitis",
+    "icd10": "J32",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 5,
+    "age": 51,
+    "sex": "F",
+    "initialEvidence": "E_201",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_192",
+      "E_55_@_V_32",
+      "E_55_@_V_89",
+      "E_55_@_V_108",
+      "E_55_@_V_109",
+      "E_55_@_V_122",
+      "E_56_@_6",
+      "E_57_@_V_89",
+      "E_57_@_V_167",
+      "E_58_@_7",
+      "E_59_@_3",
+      "E_79",
+      "E_103",
+      "E_118",
+      "E_120",
+      "E_121",
+      "E_125",
+      "E_201",
+      "E_204_@_V_10",
+      "E_226"
+    ],
+    "vignette": "51-year-old female; presenting with sharp pain in the mouth, forehead, cheek(R) (intensity 6/10) radiating to the forehead, temple(L); associated with anosmia / hyposmia (loss of smell), cough; past history / risk factors: smoke cigarettes, pneumonia, polyps in your nose, a deviated nasal septum.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.2192
+      },
+      {
+        "name": "Acute laryngitis",
+        "id": "acute_laryngitis",
+        "probability": 0.1557
+      },
+      {
+        "name": "Viral pharyngitis",
+        "id": "viral_pharyngitis",
+        "probability": 0.1399
+      },
+      {
+        "name": "Chronic rhinosinusitis",
+        "id": "chronic_rhinosinusitis",
+        "probability": 0.1326
+      },
+      {
+        "name": "Cluster headache",
+        "id": "cluster_headache",
+        "probability": 0.1308
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.0802
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0802
+      },
+      {
+        "name": "Acute rhinosinusitis",
+        "id": "acute_rhinosinusitis",
+        "probability": 0.0613
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-50-inguinal_hernia",
+    "groundTruthId": "inguinal_hernia",
+    "groundTruthName": "Inguinal hernia",
+    "icd10": "K40",
+    "organSystem": "gastrointestinal_thoracic",
+    "ddxSeverity": 3,
+    "age": 69,
+    "sex": "F",
+    "initialEvidence": "E_129",
+    "evidences": [
+      "E_30",
+      "E_53",
+      "E_54_@_V_183",
+      "E_55_@_V_87",
+      "E_55_@_V_99",
+      "E_55_@_V_100",
+      "E_55_@_V_169",
+      "E_56_@_1",
+      "E_57_@_V_123",
+      "E_58_@_1",
+      "E_59_@_6",
+      "E_129",
+      "E_130_@_V_138",
+      "E_131_@_V_10",
+      "E_132_@_1",
+      "E_133_@_V_87",
+      "E_133_@_V_88",
+      "E_134_@_5",
+      "E_135_@_V_12",
+      "E_136_@_0",
+      "E_160",
+      "E_204_@_V_10"
+    ],
+    "vignette": "69-year-old female; presenting with heavy pain in the iliac fossa(R), hip(R), hip(L) (intensity 1/10); associated with abdominal bloating or distension, skin rash or cutaneous lesions; past history / risk factors: were you born prematurely or did you suffer any complication at birth.",
+    "referenceDifferential": [
+      {
+        "name": "Inguinal hernia",
+        "id": "inguinal_hernia",
+        "probability": 0.6898
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.2838
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.0265
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-51-anemia",
+    "groundTruthId": "anemia",
+    "groundTruthName": "Anemia",
+    "icd10": "D64.9",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 17,
+    "sex": "M",
+    "initialEvidence": "E_88",
+    "evidences": [
+      "E_24",
+      "E_26",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_182",
+      "E_55_@_V_62",
+      "E_55_@_V_89",
+      "E_55_@_V_167",
+      "E_56_@_2",
+      "E_57_@_V_123",
+      "E_58_@_6",
+      "E_59_@_1",
+      "E_66",
+      "E_88",
+      "E_113",
+      "E_140",
+      "E_204_@_V_10",
+      "E_208"
+    ],
+    "vignette": "17-year-old male; presenting with sensitive, a cramp pain in the top of the head, forehead, temple(L) (intensity 2/10); associated with significant dyspnea / shortness of breath, severe prostration / bedbound exhaustion, melena (black tarry stools); past history / risk factors: a diagnosis of anemia, any family members who have been diagnosed with anemia, chronic kidney failure, is your bmi less than 18.5, or are you underweight.",
+    "referenceDifferential": [
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.2236
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.2059
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.1581
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.1581
+      },
+      {
+        "name": "Cluster headache",
+        "id": "cluster_headache",
+        "probability": 0.1545
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0997
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-52-pneumonia",
+    "groundTruthId": "pneumonia",
+    "groundTruthName": "Pneumonia",
+    "icd10": "J17, J18",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 33,
+    "sex": "F",
+    "initialEvidence": "E_94",
+    "evidences": [
+      "E_53",
+      "E_54_@_V_179",
+      "E_55_@_V_29",
+      "E_55_@_V_170",
+      "E_56_@_7",
+      "E_57_@_V_123",
+      "E_58_@_2",
+      "E_59_@_6",
+      "E_66",
+      "E_77",
+      "E_78",
+      "E_79",
+      "E_94",
+      "E_95",
+      "E_106",
+      "E_107",
+      "E_118",
+      "E_123",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_12",
+      "E_132_@_6",
+      "E_133_@_V_39",
+      "E_133_@_V_54",
+      "E_133_@_V_85",
+      "E_133_@_V_171",
+      "E_134_@_0",
+      "E_135_@_V_10",
+      "E_136_@_1",
+      "E_144",
+      "E_161",
+      "E_175",
+      "E_201",
+      "E_204_@_V_10",
+      "E_209",
+      "E_220"
+    ],
+    "vignette": "33-year-old female; presenting with a knife stroke pain in the lower chest, posterior chest wall(R) (intensity 7/10); associated with significant dyspnea / shortness of breath, productive purulent sputum cough, chills or rigors, skin rash or cutaneous lesions, diffuse myalgias (muscle aches), anorexia or early satiety; past history / risk factors: drink alcohol excessively or do you have an addiction to alcohol, smoke cigarettes, parkinson\u2019s disease, heart failure.",
+    "referenceDifferential": [
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.0593
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.0566
+      },
+      {
+        "name": "Bronchiectasis",
+        "id": "bronchiectasis",
+        "probability": 0.0551
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0495
+      },
+      {
+        "name": "Pulmonary neoplasm",
+        "id": "pulmonary_neoplasm",
+        "probability": 0.049
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.049
+      },
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.0478
+      },
+      {
+        "name": "GERD",
+        "id": "gerd",
+        "probability": 0.0475
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-53-sle",
+    "groundTruthId": "sle",
+    "groundTruthName": "SLE",
+    "icd10": "M34",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 53,
+    "sex": "F",
+    "initialEvidence": "E_66",
+    "evidences": [
+      "E_11",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_192",
+      "E_55_@_V_26",
+      "E_55_@_V_75",
+      "E_55_@_V_80",
+      "E_55_@_V_81",
+      "E_55_@_V_195",
+      "E_56_@_5",
+      "E_57_@_V_123",
+      "E_58_@_8",
+      "E_59_@_1",
+      "E_66",
+      "E_79",
+      "E_89",
+      "E_129",
+      "E_130_@_V_157",
+      "E_131_@_V_10",
+      "E_132_@_3",
+      "E_133_@_V_108",
+      "E_133_@_V_109",
+      "E_135_@_V_12",
+      "E_136_@_0",
+      "E_204_@_V_10",
+      "E_206"
+    ],
+    "vignette": "53-year-old female; presenting with sensitive, sharp pain in the back of the neck, dorsal aspect of the wrist(L), palmar face of the wrist(R) (intensity 5/10); associated with significant dyspnea / shortness of breath, chronic fatigue / non-restorative sleep, skin rash or cutaneous lesions, painful oral / mucosal ulcers; past history / risk factors: breastfed one of your children for more than 9 months, smoke cigarettes.",
+    "referenceDifferential": [
+      {
+        "name": "SLE",
+        "id": "sle",
+        "probability": 0.1069
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.0979
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.077
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.0769
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.0759
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.0726
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.0703
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.0672
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-54-anemia",
+    "groundTruthId": "anemia",
+    "groundTruthName": "Anemia",
+    "icd10": "D64.9",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 25,
+    "sex": "F",
+    "initialEvidence": "E_89",
+    "evidences": [
+      "E_7",
+      "E_24",
+      "E_53",
+      "E_54_@_V_198",
+      "E_55_@_V_62",
+      "E_55_@_V_89",
+      "E_55_@_V_166",
+      "E_56_@_5",
+      "E_57_@_V_123",
+      "E_58_@_8",
+      "E_59_@_4",
+      "E_76",
+      "E_88",
+      "E_89",
+      "E_140",
+      "E_146",
+      "E_154",
+      "E_167",
+      "E_204_@_V_10",
+      "E_208"
+    ],
+    "vignette": "25-year-old female; presenting with exhausting pain in the top of the head, forehead, temple(R) (intensity 5/10); associated with mild dizziness / lightheadedness, severe prostration / bedbound exhaustion, chronic fatigue / non-restorative sleep, melena (black tarry stools), cutaneous / mucosal pallor; past history / risk factors: a poor diet, a diagnosis of anemia, taking any new oral anticoagulants ((noacs), think you are pregnant or are you currently pregnant.",
+    "referenceDifferential": [
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.3085
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.2433
+      },
+      {
+        "name": "Cluster headache",
+        "id": "cluster_headache",
+        "probability": 0.1532
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.1516
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.1434
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-55-influenza",
+    "groundTruthId": "influenza",
+    "groundTruthName": "Influenza",
+    "icd10": "J11.1",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 3,
+    "age": 44,
+    "sex": "M",
+    "initialEvidence": "E_53",
+    "evidences": [
+      "E_50",
+      "E_53",
+      "E_54_@_V_161",
+      "E_55_@_V_25",
+      "E_55_@_V_26",
+      "E_55_@_V_89",
+      "E_55_@_V_148",
+      "E_55_@_V_166",
+      "E_56_@_7",
+      "E_57_@_V_123",
+      "E_58_@_8",
+      "E_59_@_3",
+      "E_79",
+      "E_91",
+      "E_94",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_10",
+      "E_132_@_4",
+      "E_133_@_V_53",
+      "E_133_@_V_54",
+      "E_133_@_V_89",
+      "E_134_@_3",
+      "E_135_@_V_12",
+      "E_136_@_1",
+      "E_144",
+      "E_161",
+      "E_181",
+      "E_201",
+      "E_204_@_V_10",
+      "E_227"
+    ],
+    "vignette": "44-year-old male; presenting with sensitive pain in the back of head, back of the neck, forehead (intensity 7/10); associated with diaphoresis / profuse sweating, fever (measured or subjective), chills or rigors, skin rash or cutaneous lesions, diffuse myalgias (muscle aches), anorexia or early satiety; past history / risk factors: smoke cigarettes, immunosuppressed.",
+    "referenceDifferential": [
+      {
+        "name": "Influenza",
+        "id": "influenza",
+        "probability": 0.1152
+      },
+      {
+        "name": "URTI",
+        "id": "urti",
+        "probability": 0.1051
+      },
+      {
+        "name": "Viral pharyngitis",
+        "id": "viral_pharyngitis",
+        "probability": 0.1044
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.0998
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.08
+      },
+      {
+        "name": "Epiglottitis",
+        "id": "epiglottitis",
+        "probability": 0.0765
+      },
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.0738
+      },
+      {
+        "name": "Acute laryngitis",
+        "id": "acute_laryngitis",
+        "probability": 0.0721
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-56-influenza",
+    "groundTruthId": "influenza",
+    "groundTruthName": "Influenza",
+    "icd10": "J11.1",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 3,
+    "age": 33,
+    "sex": "F",
+    "initialEvidence": "E_50",
+    "evidences": [
+      "E_50",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_198",
+      "E_55_@_V_25",
+      "E_55_@_V_26",
+      "E_55_@_V_53",
+      "E_55_@_V_62",
+      "E_55_@_V_124",
+      "E_56_@_7",
+      "E_57_@_V_123",
+      "E_58_@_2",
+      "E_59_@_1",
+      "E_88",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_10",
+      "E_132_@_2",
+      "E_133_@_V_26",
+      "E_133_@_V_89",
+      "E_134_@_5",
+      "E_135_@_V_12",
+      "E_136_@_3",
+      "E_144",
+      "E_161",
+      "E_201",
+      "E_204_@_V_10"
+    ],
+    "vignette": "33-year-old female; presenting with sensitive, exhausting pain in the back of head, back of the neck, side of the neck(R) (intensity 7/10); associated with diaphoresis / profuse sweating, severe prostration / bedbound exhaustion, skin rash or cutaneous lesions, diffuse myalgias (muscle aches), anorexia or early satiety, cough.",
+    "referenceDifferential": [
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.2445
+      },
+      {
+        "name": "Chagas",
+        "id": "chagas",
+        "probability": 0.1687
+      },
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.1599
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.1491
+      },
+      {
+        "name": "Influenza",
+        "id": "influenza",
+        "probability": 0.1333
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.1095
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.035
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-57-inguinal_hernia",
+    "groundTruthId": "inguinal_hernia",
+    "groundTruthName": "Inguinal hernia",
+    "icd10": "K40",
+    "organSystem": "gastrointestinal_thoracic",
+    "ddxSeverity": 3,
+    "age": 30,
+    "sex": "M",
+    "initialEvidence": "E_129",
+    "evidences": [
+      "E_30",
+      "E_53",
+      "E_54_@_V_183",
+      "E_55_@_V_99",
+      "E_55_@_V_100",
+      "E_55_@_V_169",
+      "E_56_@_4",
+      "E_57_@_V_123",
+      "E_58_@_2",
+      "E_59_@_5",
+      "E_129",
+      "E_130_@_V_138",
+      "E_131_@_V_10",
+      "E_132_@_3",
+      "E_133_@_V_87",
+      "E_133_@_V_88",
+      "E_134_@_6",
+      "E_135_@_V_12",
+      "E_136_@_0",
+      "E_160",
+      "E_204_@_V_10"
+    ],
+    "vignette": "30-year-old male; presenting with heavy pain in the hip(R), hip(L), testicle(L) (intensity 4/10); associated with abdominal bloating or distension, skin rash or cutaneous lesions; past history / risk factors: were you born prematurely or did you suffer any complication at birth.",
+    "referenceDifferential": [
+      {
+        "name": "Inguinal hernia",
+        "id": "inguinal_hernia",
+        "probability": 0.513
+      },
+      {
+        "name": "Anaphylaxis",
+        "id": "anaphylaxis",
+        "probability": 0.2811
+      },
+      {
+        "name": "Scombroid food poisoning",
+        "id": "scombroid_food_poisoning",
+        "probability": 0.2059
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-58-pneumonia",
+    "groundTruthId": "pneumonia",
+    "groundTruthName": "Pneumonia",
+    "icd10": "J17, J18",
+    "organSystem": "respiratory_pulmonary",
+    "ddxSeverity": 3,
+    "age": 11,
+    "sex": "F",
+    "initialEvidence": "E_175",
+    "evidences": [
+      "E_45",
+      "E_53",
+      "E_54_@_V_179",
+      "E_55_@_V_159",
+      "E_56_@_5",
+      "E_57_@_V_123",
+      "E_58_@_0",
+      "E_59_@_1",
+      "E_66",
+      "E_77",
+      "E_78",
+      "E_91",
+      "E_94",
+      "E_107",
+      "E_123",
+      "E_129",
+      "E_130_@_V_156",
+      "E_131_@_V_12",
+      "E_132_@_5",
+      "E_133_@_V_42",
+      "E_133_@_V_187",
+      "E_133_@_V_195",
+      "E_134_@_2",
+      "E_135_@_V_10",
+      "E_136_@_1",
+      "E_144",
+      "E_175",
+      "E_201",
+      "E_204_@_V_10",
+      "E_208",
+      "E_209",
+      "E_219"
+    ],
+    "vignette": "11-year-old female; presenting with a knife stroke pain in the breast(R) (intensity 5/10); associated with hemoptysis (coughing up blood), significant dyspnea / shortness of breath, productive purulent sputum cough, fever (measured or subjective), chills or rigors, skin rash or cutaneous lesions; past history / risk factors: drink alcohol excessively or do you have an addiction to alcohol, a stroke, a chronic obstructive pulmonary disease (copd), is your bmi less than 18.5, or are you underweight.",
+    "referenceDifferential": [
+      {
+        "name": "Pneumonia",
+        "id": "pneumonia",
+        "probability": 0.121
+      },
+      {
+        "name": "Bronchitis",
+        "id": "bronchitis",
+        "probability": 0.1113
+      },
+      {
+        "name": "Bronchiectasis",
+        "id": "bronchiectasis",
+        "probability": 0.109
+      },
+      {
+        "name": "Tuberculosis",
+        "id": "tuberculosis",
+        "probability": 0.1031
+      },
+      {
+        "name": "Influenza",
+        "id": "influenza",
+        "probability": 0.0933
+      },
+      {
+        "name": "Panic attack",
+        "id": "panic_attack",
+        "probability": 0.0893
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.0875
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.0729
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-59-anemia",
+    "groundTruthId": "anemia",
+    "groundTruthName": "Anemia",
+    "icd10": "D64.9",
+    "organSystem": "infectious_immunologic_hematologic",
+    "ddxSeverity": 4,
+    "age": 30,
+    "sex": "M",
+    "initialEvidence": "E_76",
+    "evidences": [
+      "E_7",
+      "E_24",
+      "E_26",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_180",
+      "E_54_@_V_182",
+      "E_54_@_V_198",
+      "E_55_@_V_89",
+      "E_55_@_V_166",
+      "E_55_@_V_167",
+      "E_56_@_5",
+      "E_57_@_V_123",
+      "E_58_@_8",
+      "E_59_@_0",
+      "E_66",
+      "E_76",
+      "E_88",
+      "E_89",
+      "E_113",
+      "E_140",
+      "E_146",
+      "E_154",
+      "E_179",
+      "E_204_@_V_10",
+      "E_208"
+    ],
+    "vignette": "30-year-old male; presenting with sensitive, tugging pain in the forehead, temple(R), temple(L) (intensity 5/10); associated with significant dyspnea / shortness of breath, mild dizziness / lightheadedness, severe prostration / bedbound exhaustion, chronic fatigue / non-restorative sleep, melena (black tarry stools), cutaneous / mucosal pallor; past history / risk factors: a poor diet, a diagnosis of anemia, any family members who have been diagnosed with anemia, chronic kidney failure.",
+    "referenceDifferential": [
+      {
+        "name": "Anemia",
+        "id": "anemia",
+        "probability": 0.2007
+      },
+      {
+        "name": "Atrial fibrillation",
+        "id": "atrial_fibrillation",
+        "probability": 0.1286
+      },
+      {
+        "name": "Myocarditis",
+        "id": "myocarditis",
+        "probability": 0.1219
+      },
+      {
+        "name": "Acute pulmonary edema",
+        "id": "acute_pulmonary_edema",
+        "probability": 0.1187
+      },
+      {
+        "name": "Guillain-Barr\u00e9 syndrome",
+        "id": "guillain_barr_syndrome",
+        "probability": 0.1085
+      },
+      {
+        "name": "HIV (initial infection)",
+        "id": "hiv_initial_infection",
+        "probability": 0.0941
+      },
+      {
+        "name": "Acute dystonic reactions",
+        "id": "acute_dystonic_reactions",
+        "probability": 0.0764
+      },
+      {
+        "name": "Myasthenia gravis",
+        "id": "myasthenia_gravis",
+        "probability": 0.0764
+      }
+    ]
+  },
+  {
+    "caseId": "ddx-60-viral_pharyngitis",
+    "groundTruthId": "viral_pharyngitis",
+    "groundTruthName": "Viral pharyngitis",
+    "icd10": "J02.9",
+    "organSystem": "ent_upper_airway",
+    "ddxSeverity": 4,
+    "age": 34,
+    "sex": "F",
+    "initialEvidence": "E_53",
+    "evidences": [
+      "E_41",
+      "E_48",
+      "E_49",
+      "E_53",
+      "E_54_@_V_161",
+      "E_54_@_V_181",
+      "E_55_@_V_21",
+      "E_55_@_V_148",
+      "E_55_@_V_163",
+      "E_56_@_9",
+      "E_57_@_V_123",
+      "E_58_@_9",
+      "E_59_@_3",
+      "E_79",
+      "E_181",
+      "E_204_@_V_10",
+      "E_227"
+    ],
+    "vignette": "34-year-old female; presenting with sensitive, burning pain in the tonsil(L), pharynx, under the jaw (intensity 9/10); associated with nasal congestion or clear rhinorrhea; past history / risk factors: been in contact with a person with similar symptoms in the past 2 weeks, live with 4 or more people, attend or work in a daycare, smoke cigarettes.",
+    "referenceDifferential": [
+      {
+        "name": "Viral pharyngitis",
+        "id": "viral_pharyngitis",
+        "probability": 0.4061
+      },
+      {
+        "name": "Possible NSTEMI / STEMI",
+        "id": "possible_nstemi_stemi",
+        "probability": 0.253
+      },
+      {
+        "name": "Acute laryngitis",
+        "id": "acute_laryngitis",
+        "probability": 0.1307
+      },
+      {
+        "name": "Unstable angina",
+        "id": "unstable_angina",
+        "probability": 0.1234
+      },
+      {
+        "name": "Stable angina",
+        "id": "stable_angina",
+        "probability": 0.0868
+      }
+    ]
+  }
+]

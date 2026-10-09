@@ -1,0 +1,34 @@
+{
+  "name": "ddx",
+  "version": "1.0.0",
+  "description": "DDx — Differential: Science-Baked Clinical Differential Diagnosis & Bedside Triage Studio powered by QMR-DT / Phrank Information Content, DDXPlus (49 Pathologies, 223 Evidences), and TypeSafe System One (jev-latest) + In-Browser OpenJev (Qwen3.5-4B GGUF)",
+  "type": "module",
+  "main": "src/classifier.js",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "build-kb": "python3 scripts/build-ddxplus-kb.py",
+    "bench": "node bench/run-eval.mjs",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "differential-diagnosis",
+    "ddxplus",
+    "clinical-decision-support",
+    "qmr-dt",
+    "phrank",
+    "bayesian-diagnosis",
+    "triage",
+    "esi",
+    "typesafe",
+    "jev",
+    "openjev",
+    "qwen3.5-4b",
+    "system-one"
+  ],
+  "author": "Hemanth HM <hemanth@h3manth.com> (https://h3manth.com)",
+  "license": "MIT",
+  "dependencies": {
+    "@typesafe-ai/sdk": "^0.6.0"
+  }
+}

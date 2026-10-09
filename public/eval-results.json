@@ -1,0 +1,573 @@
+{
+  "benchmarkTitle": "ClinJev DDXPlus 49-Pathology Differential Diagnosis & Symptom Completeness Ablation",
+  "generatedAt": "2026-10-09T10:49:54.613Z",
+  "hardware": "Apple Silicon arm64 · Node.js ESM + TypeSafe System One (jev-1.13.0)",
+  "dataset": "DDXPlus (Fansi Tchango et al., NeurIPS 2022) — 8,000 Training Encounters, N=60 Golden Test Slice across all 49 Pathologies",
+  "methods": [
+    {
+      "id": "clinjev_full_system_one",
+      "name": "ClinJev Full (QMR-DT + Phrank IC + TypeSafe Jev System One)",
+      "params": "jev-latest (10 primitives) + 49-Pathology QMR-DT",
+      "sampleSize": 60,
+      "top1FullPct": 100,
+      "top1Ci95": [
+        94,
+        100
+      ],
+      "top3FullPct": 100,
+      "top5FullPct": 100,
+      "mrr": 1,
+      "top1Partial50Pct": 98.3,
+      "top3Partial50Pct": 100,
+      "top1Sparse35Pct": 93.3,
+      "top3Sparse35Pct": 100,
+      "sparseDropDeltaPct": -6.7,
+      "emergencyRecallPct": 100,
+      "latencyP50Ms": 126
+    },
+    {
+      "id": "qmr_dt_bipartite",
+      "name": "ClinJev Stage 1: QMR-DT Bipartite Bayesian + Leakage Penalty",
+      "params": "Shwe et al. (1991) · 223 Evidences · Zero-Dep",
+      "sampleSize": 60,
+      "top1FullPct": 100,
+      "top1Ci95": [
+        94,
+        100
+      ],
+      "top3FullPct": 100,
+      "top5FullPct": 100,
+      "mrr": 1,
+      "top1Partial50Pct": 98.3,
+      "top3Partial50Pct": 100,
+      "top1Sparse35Pct": 93.3,
+      "top3Sparse35Pct": 100,
+      "sparseDropDeltaPct": -6.7,
+      "emergencyRecallPct": 100,
+      "latencyP50Ms": 0.43
+    },
+    {
+      "id": "naive_bayes_bernoulli",
+      "name": "Multinomial / Bernoulli Naive Bayes Baseline",
+      "params": "Fansi Tchango et al. (NeurIPS 2022) Baseline",
+      "sampleSize": 60,
+      "top1FullPct": 100,
+      "top1Ci95": [
+        94,
+        100
+      ],
+      "top3FullPct": 100,
+      "top5FullPct": 100,
+      "mrr": 1,
+      "top1Partial50Pct": 98.3,
+      "top3Partial50Pct": 100,
+      "top1Sparse35Pct": 93.3,
+      "top3Sparse35Pct": 100,
+      "sparseDropDeltaPct": -6.7,
+      "emergencyRecallPct": 100,
+      "latencyP50Ms": 0.43
+    },
+    {
+      "id": "phrank_ic_similarity",
+      "name": "Phrank Information-Content (IC) Phenotype Ranking",
+      "params": "Jagadeesh et al. (2019) · -log P(e) Specificity",
+      "sampleSize": 60,
+      "top1FullPct": 95,
+      "top1Ci95": [
+        86.3,
+        98.3
+      ],
+      "top3FullPct": 100,
+      "top5FullPct": 100,
+      "mrr": 0.975,
+      "top1Partial50Pct": 95,
+      "top3Partial50Pct": 100,
+      "top1Sparse35Pct": 91.7,
+      "top3Sparse35Pct": 100,
+      "sparseDropDeltaPct": -3.3,
+      "emergencyRecallPct": 94.1,
+      "latencyP50Ms": 0.43
+    },
+    {
+      "id": "unweighted_jaccard",
+      "name": "Unweighted Symptom Jaccard Overlap",
+      "params": "|E ∩ D| / |E ∪ D| Set Intersection",
+      "sampleSize": 60,
+      "top1FullPct": 96.7,
+      "top1Ci95": [
+        88.6,
+        99.1
+      ],
+      "top3FullPct": 100,
+      "top5FullPct": 100,
+      "mrr": 0.981,
+      "top1Partial50Pct": 85,
+      "top3Partial50Pct": 98.3,
+      "top1Sparse35Pct": 75,
+      "top3Sparse35Pct": 93.3,
+      "sparseDropDeltaPct": -21.7,
+      "emergencyRecallPct": 94.1,
+      "latencyP50Ms": 0.43
+    }
+  ],
+  "openJevBrowserBenchmarks": [
+    {
+      "modelId": "qwen3.5-4b",
+      "name": "OpenJev Local · Qwen3.5 4B (Top In-Browser)",
+      "downloadSize": "3.01 GB GGUF (Q4_K_M)",
+      "authoredBalancedAccuracyPct": 81.3,
+      "perturbedBalancedAccuracyPct": 76.6,
+      "typesafeEqualCaseAgreementPct": 84.5,
+      "recommendedTier": "#1 Top In-Browser Model (Default)"
+    },
+    {
+      "modelId": "minicpm5-2b",
+      "name": "OpenJev Local · MiniCPM5 2B",
+      "downloadSize": "1.56 GB GGUF (Q4_K_M)",
+      "authoredBalancedAccuracyPct": 68.6,
+      "perturbedBalancedAccuracyPct": 69.3,
+      "typesafeEqualCaseAgreementPct": 63.7,
+      "recommendedTier": "Mid-Tier Desktop Fallback"
+    },
+    {
+      "modelId": "qwen3-0.6b",
+      "name": "OpenJev Local · Qwen3 0.6B",
+      "downloadSize": "639 MB GGUF (Q8_0)",
+      "authoredBalancedAccuracyPct": 44,
+      "perturbedBalancedAccuracyPct": 52.8,
+      "typesafeEqualCaseAgreementPct": 40.7,
+      "recommendedTier": "Compact Mobile Fallback"
+    },
+    {
+      "modelId": "jev-1.13.0",
+      "name": "TypeSafe Cloud · Published Jev (jev-latest)",
+      "downloadSize": "Hosted Cloud API",
+      "authoredBalancedAccuracyPct": null,
+      "perturbedBalancedAccuracyPct": null,
+      "typesafeEqualCaseAgreementPct": 88.3,
+      "recommendedTier": "Cloud Reference System One"
+    }
+  ],
+  "probes": [
+    {
+      "caseId": "ddx-01-anaphylaxis",
+      "groundTruthId": "anaphylaxis",
+      "groundTruthName": "Anaphylaxis",
+      "icd10": "T78.0",
+      "age": 29,
+      "sex": "M",
+      "vignette": "29-year-old male; presenting with a knife stroke, a cramp pain in the flank(L), iliac fossa(R), iliac fossa(L) (intensity 6/10); associated with significant dyspnea / shortness of breath, skin rash or cutaneous lesions, nausea or retching, localized or peripheral edema, syncope / loss of consciousness, inspiratory stridor; past history / risk factors: a known severe food allergy, more likely to develop common allergies than the general population.",
+      "qmrTop3": [
+        {
+          "id": "anaphylaxis",
+          "name": "Anaphylaxis",
+          "posterior": 1,
+          "logQmr": -23.0067
+        },
+        {
+          "id": "pancreatic_neoplasm",
+          "name": "Pancreatic neoplasm",
+          "posterior": 0,
+          "logQmr": -218.5012
+        },
+        {
+          "id": "inguinal_hernia",
+          "name": "Inguinal hernia",
+          "posterior": 0,
+          "logQmr": -221.7214
+        }
+      ],
+      "phrankTop3": [
+        {
+          "id": "anaphylaxis",
+          "name": "Anaphylaxis",
+          "icScore": 78.7363
+        },
+        {
+          "id": "scombroid_food_poisoning",
+          "name": "Scombroid food poisoning",
+          "icScore": 38.4283
+        },
+        {
+          "id": "pancreatic_neoplasm",
+          "name": "Pancreatic neoplasm",
+          "icScore": 26.9831
+        }
+      ],
+      "jaccardTop3": [
+        {
+          "id": "anaphylaxis",
+          "name": "Anaphylaxis",
+          "jaccard": 0.8214
+        },
+        {
+          "id": "sarcoidosis",
+          "name": "Sarcoidosis",
+          "jaccard": 0.5333
+        },
+        {
+          "id": "sle",
+          "name": "SLE",
+          "jaccard": 0.5161
+        }
+      ],
+      "sparse35QmrWinner": "Anaphylaxis",
+      "sparse35JaccardWinner": "Anaphylaxis",
+      "jevWinner": "Anaphylaxis",
+      "jevProbability": 1,
+      "jevConfidence": 1,
+      "jevLatencyMs": 366,
+      "jevModel": "jev-1.13.0"
+    },
+    {
+      "caseId": "ddx-02-possible_nstemi_stemi",
+      "groundTruthId": "possible_nstemi_stemi",
+      "groundTruthName": "Possible NSTEMI / STEMI",
+      "icd10": "I21",
+      "age": 20,
+      "sex": "F",
+      "vignette": "20-year-old female; presenting with heavy, sickening pain in the lower chest, biceps(R), side of the chest(R) (intensity 7/10) radiating to the biceps(L), under the jaw; associated with nausea or retching, anorexia or early satiety; past history / risk factors: infected with the human immunodeficiency virus (hiv), diabetes, significantly overweight compared to people of the same height as you, high cholesterol or do you take medications to treat high cholesterol.",
+      "qmrTop3": [
+        {
+          "id": "possible_nstemi_stemi",
+          "name": "Possible NSTEMI / STEMI",
+          "posterior": 1,
+          "logQmr": -23.7833
+        },
+        {
+          "id": "unstable_angina",
+          "name": "Unstable angina",
+          "posterior": 0,
+          "logQmr": -75.1014
+        },
+        {
+          "id": "stable_angina",
+          "name": "Stable angina",
+          "posterior": 0,
+          "logQmr": -80.5477
+        }
+      ],
+      "phrankTop3": [
+        {
+          "id": "possible_nstemi_stemi",
+          "name": "Possible NSTEMI / STEMI",
+          "icScore": 44.5973
+        },
+        {
+          "id": "unstable_angina",
+          "name": "Unstable angina",
+          "icScore": 32.2
+        },
+        {
+          "id": "stable_angina",
+          "name": "Stable angina",
+          "icScore": 31.2944
+        }
+      ],
+      "jaccardTop3": [
+        {
+          "id": "possible_nstemi_stemi",
+          "name": "Possible NSTEMI / STEMI",
+          "jaccard": 0.8261
+        },
+        {
+          "id": "stable_angina",
+          "name": "Stable angina",
+          "jaccard": 0.56
+        },
+        {
+          "id": "unstable_angina",
+          "name": "Unstable angina",
+          "jaccard": 0.5357
+        }
+      ],
+      "sparse35QmrWinner": "Possible NSTEMI / STEMI",
+      "sparse35JaccardWinner": "Possible NSTEMI / STEMI",
+      "jevWinner": "Possible NSTEMI / STEMI",
+      "jevProbability": 1,
+      "jevConfidence": 1,
+      "jevLatencyMs": 131,
+      "jevModel": "jev-1.13.0"
+    },
+    {
+      "caseId": "ddx-06-pulmonary_embolism",
+      "groundTruthId": "pulmonary_embolism",
+      "groundTruthName": "Pulmonary embolism",
+      "icd10": "I26",
+      "age": 51,
+      "sex": "M",
+      "vignette": "51-year-old male; presenting with sensitive, a knife stroke pain in the lower chest, upper chest, calf(R) (intensity 10/10) radiating to the side of the chest(R), side of the chest(L); associated with hemoptysis (coughing up blood), significant dyspnea / shortness of breath, localized or peripheral edema, syncope / loss of consciousness; past history / risk factors: an active cancer, deep vein thrombosis (dvt), had surgery within the last month.",
+      "qmrTop3": [
+        {
+          "id": "pulmonary_embolism",
+          "name": "Pulmonary embolism",
+          "posterior": 1,
+          "logQmr": -34.224
+        },
+        {
+          "id": "acute_pulmonary_edema",
+          "name": "Acute pulmonary edema",
+          "posterior": 0,
+          "logQmr": -136.9529
+        },
+        {
+          "id": "spontaneous_rib_fracture",
+          "name": "Spontaneous rib fracture",
+          "posterior": 0,
+          "logQmr": -155.44
+        }
+      ],
+      "phrankTop3": [
+        {
+          "id": "pulmonary_embolism",
+          "name": "Pulmonary embolism",
+          "icScore": 42.1351
+        },
+        {
+          "id": "acute_pulmonary_edema",
+          "name": "Acute pulmonary edema",
+          "icScore": 17.3312
+        },
+        {
+          "id": "spontaneous_rib_fracture",
+          "name": "Spontaneous rib fracture",
+          "icScore": 15.6044
+        }
+      ],
+      "jaccardTop3": [
+        {
+          "id": "pulmonary_embolism",
+          "name": "Pulmonary embolism",
+          "jaccard": 0.7895
+        },
+        {
+          "id": "chagas",
+          "name": "Chagas",
+          "jaccard": 0.4545
+        },
+        {
+          "id": "boerhaave",
+          "name": "Boerhaave",
+          "jaccard": 0.4
+        }
+      ],
+      "sparse35QmrWinner": "Pulmonary embolism",
+      "sparse35JaccardWinner": "Pulmonary embolism",
+      "jevWinner": "Pulmonary embolism",
+      "jevProbability": 1,
+      "jevConfidence": 1,
+      "jevLatencyMs": 171,
+      "jevModel": "jev-1.13.0"
+    },
+    {
+      "caseId": "ddx-08-guillain_barr_syndrome",
+      "groundTruthId": "guillain_barr_syndrome",
+      "groundTruthName": "Guillain-Barré syndrome",
+      "icd10": "G61.0",
+      "age": 43,
+      "sex": "M",
+      "vignette": "43-year-old male; associated with significant dyspnea / shortness of breath, cranial / facial motor weakness, symmetric bilateral limb weakness, distal lower-extremity paresthesias / numbness, unilateral facial weakness / palsy, focal or generalized limb/facial paresis; past history / risk factors: recently had a viral infection.",
+      "qmrTop3": [
+        {
+          "id": "guillain_barr_syndrome",
+          "name": "Guillain-Barré syndrome",
+          "posterior": 1,
+          "logQmr": -10.6779
+        },
+        {
+          "id": "myasthenia_gravis",
+          "name": "Myasthenia gravis",
+          "posterior": 0,
+          "logQmr": -64.7033
+        },
+        {
+          "id": "acute_dystonic_reactions",
+          "name": "Acute dystonic reactions",
+          "posterior": 0,
+          "logQmr": -85.1598
+        }
+      ],
+      "phrankTop3": [
+        {
+          "id": "guillain_barr_syndrome",
+          "name": "Guillain-Barré syndrome",
+          "icScore": 17.5653
+        },
+        {
+          "id": "myasthenia_gravis",
+          "name": "Myasthenia gravis",
+          "icScore": 5.127
+        },
+        {
+          "id": "pericarditis",
+          "name": "Pericarditis",
+          "icScore": 3.2229
+        }
+      ],
+      "jaccardTop3": [
+        {
+          "id": "guillain_barr_syndrome",
+          "name": "Guillain-Barré syndrome",
+          "jaccard": 0.8
+        },
+        {
+          "id": "myasthenia_gravis",
+          "name": "Myasthenia gravis",
+          "jaccard": 0.1875
+        },
+        {
+          "id": "pericarditis",
+          "name": "Pericarditis",
+          "jaccard": 0.1
+        }
+      ],
+      "sparse35QmrWinner": "Guillain-Barré syndrome",
+      "sparse35JaccardWinner": "Guillain-Barré syndrome",
+      "jevWinner": "Guillain-Barré syndrome",
+      "jevProbability": 1,
+      "jevConfidence": 1,
+      "jevLatencyMs": 127,
+      "jevModel": "jev-1.13.0"
+    },
+    {
+      "caseId": "ddx-11-epiglottitis",
+      "groundTruthId": "epiglottitis",
+      "groundTruthName": "Epiglottitis",
+      "icd10": "J05.1",
+      "age": 28,
+      "sex": "F",
+      "vignette": "28-year-old female; presenting with sharp pain in the tonsil(R), tonsil(L), back of the neck (intensity 6/10); associated with dysphagia / odynophagia, significant dyspnea / shortness of breath, fever (measured or subjective), inspiratory stridor, hoarseness / dysphonia; past history / risk factors: drink alcohol excessively or do you have an addiction to alcohol, high blood pressure or do you take medications to treat high blood pressure, are your vaccinations up to date.",
+      "qmrTop3": [
+        {
+          "id": "epiglottitis",
+          "name": "Epiglottitis",
+          "posterior": 1,
+          "logQmr": -17.6087
+        },
+        {
+          "id": "acute_laryngitis",
+          "name": "Acute laryngitis",
+          "posterior": 0,
+          "logQmr": -97.8867
+        },
+        {
+          "id": "chagas",
+          "name": "Chagas",
+          "posterior": 0,
+          "logQmr": -109.1169
+        }
+      ],
+      "phrankTop3": [
+        {
+          "id": "epiglottitis",
+          "name": "Epiglottitis",
+          "icScore": 28.173
+        },
+        {
+          "id": "acute_laryngitis",
+          "name": "Acute laryngitis",
+          "icScore": 12.2862
+        },
+        {
+          "id": "viral_pharyngitis",
+          "name": "Viral pharyngitis",
+          "icScore": 10.3139
+        }
+      ],
+      "jaccardTop3": [
+        {
+          "id": "epiglottitis",
+          "name": "Epiglottitis",
+          "jaccard": 0.75
+        },
+        {
+          "id": "boerhaave",
+          "name": "Boerhaave",
+          "jaccard": 0.4737
+        },
+        {
+          "id": "acute_otitis_media",
+          "name": "Acute otitis media",
+          "jaccard": 0.45
+        }
+      ],
+      "sparse35QmrWinner": "Epiglottitis",
+      "sparse35JaccardWinner": "Acute laryngitis",
+      "jevWinner": "Epiglottitis",
+      "jevProbability": 1,
+      "jevConfidence": 1,
+      "jevLatencyMs": 125,
+      "jevModel": "jev-1.13.0"
+    },
+    {
+      "caseId": "ddx-14-boerhaave",
+      "groundTruthId": "boerhaave",
+      "groundTruthName": "Boerhaave",
+      "icd10": "K22.3",
+      "age": 68,
+      "sex": "M",
+      "vignette": "68-year-old male; presenting with heartbreaking, sickening pain in the lower chest, flank(R), upper chest (intensity 8/10) radiating to the thoracic spine, scapula(R); associated with significant dyspnea / shortness of breath, hematemesis / coffee-ground emesis, recurrent vomiting or forceful retching; past history / risk factors: drink alcohol excessively or do you have an addiction to alcohol.",
+      "qmrTop3": [
+        {
+          "id": "boerhaave",
+          "name": "Boerhaave",
+          "posterior": 1,
+          "logQmr": -16.1903
+        },
+        {
+          "id": "gerd",
+          "name": "GERD",
+          "posterior": 0,
+          "logQmr": -83.7514
+        },
+        {
+          "id": "stable_angina",
+          "name": "Stable angina",
+          "posterior": 0,
+          "logQmr": -92.4955
+        }
+      ],
+      "phrankTop3": [
+        {
+          "id": "boerhaave",
+          "name": "Boerhaave",
+          "icScore": 31.8667
+        },
+        {
+          "id": "possible_nstemi_stemi",
+          "name": "Possible NSTEMI / STEMI",
+          "icScore": 12.9021
+        },
+        {
+          "id": "gerd",
+          "name": "GERD",
+          "icScore": 12.2232
+        }
+      ],
+      "jaccardTop3": [
+        {
+          "id": "boerhaave",
+          "name": "Boerhaave",
+          "jaccard": 0.8462
+        },
+        {
+          "id": "spontaneous_rib_fracture",
+          "name": "Spontaneous rib fracture",
+          "jaccard": 0.4737
+        },
+        {
+          "id": "pericarditis",
+          "name": "Pericarditis",
+          "jaccard": 0.4706
+        }
+      ],
+      "sparse35QmrWinner": "Boerhaave",
+      "sparse35JaccardWinner": "Boerhaave",
+      "jevWinner": "Boerhaave",
+      "jevProbability": 1,
+      "jevConfidence": 1,
+      "jevLatencyMs": 100,
+      "jevModel": "jev-1.13.0"
+    }
+  ]
+}

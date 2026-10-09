@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DDx — Differential · Architecture Blueprint (QMR-DT + Phrank IC + System One)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 32px;
+      background: #ececec;
+      color: #111111;
+      font-family: 'Inter', sans-serif;
+    }
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1.2px solid #111111;
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1.2px solid #111111;
+      padding-bottom: 14px;
+    }
+    h1 {
+      font-size: 1.15rem;
+      margin: 0;
+      font-family: 'Geist Mono', monospace;
+      letter-spacing: 0.04em;
+    }
+    a {
+      font-family: 'Geist Mono', monospace;
+      font-size: 0.85rem;
+      color: #111111;
+      text-decoration: none;
+      border: 1px solid #111111;
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <h1>DDX — DIFFERENTIAL · ARCHITECTURE BLUEPRINT · DDXPLUS + QMR-DT + PHRANK IC + SYSTEM ONE (JEV / QWEN3.5-4B)</h1>
+      <a href="./index.html">← Back to DDx</a>
+    </div>
+    <svg viewBox="0 0 1160 540" role="img" aria-label="DDx — Differential Three-Stage Clinical Diagnostic Architecture">
+      <defs>
+        <marker id="arch-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#111111" />
+        </marker>
+      </defs>
+      <rect x="0" y="0" width="1160" height="540" rx="10" fill="#ffffff" />
+
+      <rect x="28" y="32" width="332" height="448" rx="10" fill="none" stroke="#111111" stroke-width="1.2" stroke-dasharray="5 5" />
+      <rect x="44" y="22" width="214" height="18" fill="#ffffff" />
+      <text x="50" y="35" font-family="'Geist Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#111111">01 BAYESIAN PHENOTYPE TIER</text>
+
+      <rect x="414" y="32" width="332" height="448" rx="10" fill="none" stroke="#111111" stroke-width="1.2" stroke-dasharray="5 5" />
+      <rect x="430" y="22" width="220" height="18" fill="#ffffff" />
+      <text x="436" y="35" font-family="'Geist Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#111111">02 SYSTEM ONE ORCHESTRATOR</text>
+
+      <rect x="800" y="32" width="332" height="448" rx="10" fill="none" stroke="#111111" stroke-width="1.2" stroke-dasharray="5 5" />
+      <rect x="816" y="22" width="222" height="18" fill="#ffffff" />
+      <text x="822" y="35" font-family="'Geist Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#111111">03 INFERENCE &amp; PRIMITIVES</text>
+
+      <g>
+        <rect x="52" y="56" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+        <rect x="66" y="68" width="70" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+        <text x="101" y="80" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">EVIDENCE</text>
+        <text x="194" y="102" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">Patient Symptoms &amp; History</text>
+        <text x="194" y="124" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">223 DDXPlus Codes · Free-Text NLP</text>
+      </g>
+
+      <g>
+        <rect x="52" y="198" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+        <rect x="66" y="210" width="88" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+        <text x="110" y="222" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">PHRANK / CDR</text>
+        <text x="194" y="244" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">IC Specificity &amp; Clinical Rules</text>
+        <text x="194" y="266" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">-ln P(e) · HEART · Wells · CURB-65</text>
+      </g>
+
+      <g>
+        <rect x="52" y="340" width="284" height="106" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+        <rect x="66" y="352" width="84" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+        <text x="108" y="364" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">QMR-DT NET</text>
+        <text x="194" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">49-Pathology Bayesian Scorer</text>
+        <text x="194" y="410" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">P(D|E) · -1.8 Leakage · Shannon IG</text>
+      </g>
+
+      <g>
+        <rect x="438" y="112" width="284" height="114" rx="8" fill="#111111" stroke="#111111" stroke-width="1.5" />
+        <rect x="454" y="126" width="96" height="18" rx="2" fill="none" stroke="#ffffff" stroke-width="1" />
+        <text x="502" y="138" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#ffffff">CORE ENGINE</text>
+        <text x="580" y="168" text-anchor="middle" font-family="'Inter', sans-serif" font-size="15" font-weight="600" fill="#ffffff">System One Clinical Compiler</text>
+        <text x="580" y="192" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#a1a1aa">10 Batched Primitives · Top-12 DDx</text>
+      </g>
+
+      <g>
+        <rect x="438" y="340" width="284" height="106" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+        <rect x="454" y="352" width="76" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+        <text x="492" y="364" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">ARBITER</text>
+        <text x="580" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">ESI Triage &amp; Beam Router</text>
+        <text x="580" y="410" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">√(P(Organ)×P(Dx)) · Red-Flag Gate</text>
+      </g>
+
+      <g>
+        <rect x="824" y="56" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+        <rect x="838" y="68" width="84" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+        <text x="880" y="80" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">CLOUD API</text>
+        <text x="966" y="102" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">TypeSafe Jev Cloud API</text>
+        <text x="966" y="124" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">POST /v1/systemone · jev-latest</text>
+      </g>
+
+      <g>
+        <rect x="824" y="198" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" stroke-dasharray="4 3" />
+        <rect x="838" y="210" width="90" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+        <text x="883" y="222" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">LOCAL WASM</text>
+        <text x="966" y="244" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">OpenJev Top Browser Model</text>
+        <text x="966" y="266" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">Qwen3.5-4B (84.5%) · MiniCPM5-2B</text>
+      </g>
+
+      <g>
+        <rect x="824" y="340" width="284" height="106" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+        <rect x="838" y="352" width="92" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+        <text x="884" y="364" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">PRIMITIVES</text>
+        <text x="966" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">choice() · score() · noul()</text>
+        <text x="966" y="410" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">DDx · Organ · ESI · Workup · Flags</text>
+      </g>
+
+      <path d="M 194 148 L 194 198" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+      <text x="204" y="176" font-family="'Geist Mono', monospace" font-size="9" font-weight="600" fill="#111111">E_0..E_227</text>
+
+      <path d="M 194 290 L 194 340" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+      <text x="204" y="318" font-family="'Geist Mono', monospace" font-size="9" font-weight="600" fill="#111111">IC + CDRS</text>
+
+      <path d="M 336 388 L 386 388 Q 394 388 394 380 L 394 177 Q 394 169 402 169 L 438 169" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+      <rect x="358" y="268" width="72" height="16" fill="#ffffff" />
+      <text x="394" y="279" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">STATE JSON</text>
+
+      <path d="M 722 150 L 766 150 Q 774 150 774 142 L 774 110 Q 774 102 782 102 L 824 102" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+      <rect x="742" y="118" width="64" height="15" fill="#ffffff" />
+      <text x="774" y="129" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">BYOK API</text>
+
+      <path d="M 722 188 L 766 188 Q 774 188 774 196 L 774 236 Q 774 244 782 244 L 824 244" fill="none" stroke="#111111" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arch-arrow)" />
+      <rect x="740" y="208" width="68" height="15" fill="#ffffff" />
+      <text x="774" y="219" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">WASM GGUF</text>
+
+      <path d="M 966 290 L 966 340" fill="none" stroke="#111111" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arch-arrow)" />
+      <text x="976" y="318" font-family="'Geist Mono', monospace" font-size="9" font-weight="600" fill="#111111">1-TOK LOGITS</text>
+
+      <path d="M 824 388 L 722 388" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+      <rect x="734" y="368" width="78" height="15" fill="#ffffff" />
+      <text x="773" y="378" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">PROBS + CONF</text>
+
+      <path d="M 580 226 L 580 340" fill="none" stroke="#111111" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arch-arrow)" />
+      <rect x="538" y="274" width="84" height="16" fill="#ffffff" />
+      <text x="580" y="285" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">POSTERIORS</text>
+    </svg>
+  </div>
+</body>
+</html>

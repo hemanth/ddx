@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DDx — Differential</title>
+  <meta name="description" content="DDx — Differential: Clinician-friendly differential diagnosis and emergency triage workbench across 49 DDXPlus ICD-10 pathologies powered by QMR-DT Bayesian Networks, Phrank Information Content, TypeSafe System One (jev-latest), and In-Browser OpenJev (Qwen3.5-4B WASM)." />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="describedby" href="./.well-known/agent-card.json" type="application/json" />
+  <link rel="describedby" href="./llms.txt" type="text/plain" />
+  <link rel="stylesheet" href="./styles.css?v=4" />
+</head>
+<body>
+  <!-- Subtle Top Utility Bar -->
+  <header class="top-bar">
+    <div class="top-bar-inner">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <rect x="3" y="3" width="18" height="18" rx="4" transform="rotate(45 12 12)" fill="#f05032"/>
+            <path d="M12 8.2v7.6M8.2 12h7.6" stroke="#ececec" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">DDx</span>
+        <span class="brand-sub-badge">Differential</span>
+      </div>
+
+      <div class="top-actions">
+        <button type="button" class="top-pill-btn" id="btn-toggle-engine" aria-expanded="false">
+          <span class="status-dot" id="engine-dot"></span>
+          <span id="engine-status-text">Engine: Jev / OpenJev Qwen3.5-4B</span>
+        </button>
+        <button type="button" class="top-pill-btn" id="btn-toggle-eval" aria-expanded="false">
+          <span>Clinical Validation · N=60</span>
+        </button>
+        <button type="button" class="top-pill-btn" id="btn-toggle-arch" aria-expanded="false">
+          <span>Methodology</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Collapsible Engine / API Key / OpenJev Drawer -->
+    <div class="top-drawer" id="drawer-engine" hidden>
+      <div class="drawer-inner">
+        <div class="drawer-header">
+          <span class="drawer-title">DECISION ENGINE &amp; RUNTIME (TYPESAFE CLOUD BYOK OR OPENJEV TOP IN-BROWSER QWEN3.5-4B WASM)</span>
+          <button type="button" class="drawer-close" id="btn-close-engine">Close</button>
+        </div>
+        <div class="engine-controls-grid">
+          <div class="engine-mode-pills" role="group" aria-label="Inference Runtime Mode">
+            <button type="button" class="engine-mode-pill active" id="btn-mode-cloud">
+              TypeSafe Cloud API (BYOK / .env)
+            </button>
+            <button type="button" class="engine-mode-pill" id="btn-mode-openjev">
+              OpenJev In-Browser (Qwen3.5-4B #1 Local Model)
+            </button>
+          </div>
+          <div class="decision-links-wrap">
+            <select id="engine-mode-select" class="studio-select" aria-label="Decision Engine Mode">
+              <option value="typesafe-cloud">TypeSafe Cloud · jev-latest (88.3% Published Agreement)</option>
+              <option value="openjev:qwen3.5-4b">OpenJev Local · Qwen3.5-4B (#1 Top In-Browser · 84.5% Jev Agreement · 3.01 GB)</option>
+              <option value="openjev:minicpm5-2b">OpenJev Local · MiniCPM5-2B (63.7% Jev Agreement · 1.56 GB)</option>
+              <option value="openjev:qwen3-0.6b">OpenJev Local · Qwen3-0.6B (40.7% Jev Agreement · 639 MB)</option>
+            </select>
+            <a href="https://openjev.com/" target="_blank" rel="noopener" class="openjev-link-badge">openjev.com ↗</a>
+          </div>
+        </div>
+
+        <div class="byok-key-group" id="byok-key-group">
+          <label for="jev-api-key-input" class="mono-label">JEV API KEY (BYOK):</label>
+          <div class="key-input-wrap">
+            <input
+              type="password"
+              id="jev-api-key-input"
+              class="studio-input key-input"
+              placeholder="Paste TypeSafe Jev API key (ts_...) — stored in localStorage"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button type="button" class="btn-inline-ghost" id="btn-toggle-key-vis">Show</button>
+          </div>
+          <button type="button" class="btn-primary-sm" id="btn-save-api-key">
+            <span id="save-key-label">Apply Key</span>
+          </button>
+          <button type="button" class="btn-secondary-sm" id="btn-clear-api-key">Clear</button>
+          <span class="mono-badge" id="api-key-status-badge">SERVER .ENV</span>
+        </div>
+
+        <div class="openjev-controls" id="openjev-controls" style="display: none;">
+          <span class="mono-label" id="openjev-status-text">
+            Runs #1 top in-browser OpenJev model (Qwen3.5-4B GGUF, 84.5% TypeSafe agreement) via @wllama/wllama 1-token direct logit readout (A..L). Zero patient data leaves the browser.
+          </span>
+          <button type="button" class="btn-primary-sm" id="btn-load-openjev">
+            <span id="load-openjev-label">Load &amp; Run Qwen3.5-4B In-Browser</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible Methodology & Architecture Blueprint Drawer -->
+    <div class="top-drawer" id="drawer-arch" hidden>
+      <div class="drawer-inner">
+        <div class="drawer-header">
+          <span class="drawer-title">CLINICAL METHODOLOGY · QMR-DT BAYESIAN NETWORK, PHRANK INFORMATION CONTENT &amp; SYSTEM ONE</span>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <a href="./architecture-diagram.html" target="_blank" rel="noopener" class="openjev-link-badge">
+              Open Fullscreen Blueprint ↗
+            </a>
+            <button type="button" class="drawer-close" id="btn-close-arch">Close</button>
+          </div>
+        </div>
+        <p class="arch-intro">
+          <strong>Differential</strong> synthesizes five decades of peer-reviewed clinical decision support literature—<strong>DDXPlus</strong> (Fansi Tchango et al., NeurIPS 2022), <strong>QMR-DT Bipartite Bayesian Networks</strong> (Shwe et al., 1991), <strong>Phrank Information Content</strong> (Jagadeesh et al., 2019), and <strong>Validated Bedside Clinical Decision Rules</strong> (HEART, Wells PE, CURB-65, ESI v4)—paired with <strong>10 parallel TypeSafe System One (<code>choice</code>, <code>score</code>, <code>noul</code>) primitives</strong> and HIPAA-friendly in-browser <strong>OpenJev <code>Qwen3.5-4B</code></strong> WASM inference.
+        </p>
+
+        <div class="arch-blueprint-frame">
+          <svg
+            class="arch-svg"
+            viewBox="0 0 1160 520"
+            role="img"
+            aria-labelledby="arch-svg-title arch-svg-desc"
+          >
+            <title id="arch-svg-title">Differential Hybrid QMR-DT Bayesian and TypeSafe System One Architecture</title>
+            <desc id="arch-svg-desc">Three-stage architecture diagram showing Bayesian Phenotype Tier on the left, System One Clinical Compiler and ESI Triage Router in the center, and Hybrid Inference Runtimes (TypeSafe Jev Cloud API and OpenJev Qwen3.5-4B Browser Engine) on the right.</desc>
+            <defs>
+              <marker id="arch-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#111111" />
+              </marker>
+            </defs>
+            <rect x="0" y="0" width="1160" height="520" rx="10" fill="#ffffff" />
+            <rect x="28" y="32" width="332" height="428" rx="10" fill="none" stroke="#111111" stroke-width="1.2" stroke-dasharray="5 5" />
+            <rect x="44" y="22" width="214" height="18" fill="#ffffff" />
+            <text x="50" y="35" font-family="'Geist Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#111111">01 BAYESIAN PHENOTYPE TIER</text>
+
+            <rect x="414" y="32" width="332" height="428" rx="10" fill="none" stroke="#111111" stroke-width="1.2" stroke-dasharray="5 5" />
+            <rect x="430" y="22" width="220" height="18" fill="#ffffff" />
+            <text x="436" y="35" font-family="'Geist Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#111111">02 SYSTEM ONE ORCHESTRATOR</text>
+
+            <rect x="800" y="32" width="332" height="428" rx="10" fill="none" stroke="#111111" stroke-width="1.2" stroke-dasharray="5 5" />
+            <rect x="816" y="22" width="222" height="18" fill="#ffffff" />
+            <text x="822" y="35" font-family="'Geist Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1.4" fill="#111111">03 INFERENCE &amp; PRIMITIVES</text>
+
+            <g>
+              <rect x="52" y="56" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+              <rect x="66" y="68" width="70" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+              <text x="101" y="80" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">HPI &amp; ROS</text>
+              <text x="194" y="102" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">Positives (+), Denials (−) &amp; PMH</text>
+              <text x="194" y="124" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">223 DDXPlus Evidences · NegEx NLP</text>
+            </g>
+            <g>
+              <rect x="52" y="198" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+              <rect x="66" y="210" width="88" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+              <text x="110" y="222" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">PHRANK / CDR</text>
+              <text x="194" y="244" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">IC Specificity &amp; Bedside Rules</text>
+              <text x="194" y="266" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">-ln P(e) · HEART · Wells · CURB-65</text>
+            </g>
+            <g>
+              <rect x="52" y="340" width="284" height="96" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+              <rect x="66" y="352" width="84" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+              <text x="108" y="364" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">QMR-DT NET</text>
+              <text x="194" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">49-Pathology Bayesian Scorer</text>
+              <text x="194" y="410" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">LR+ / LR− · Leakage · Shannon VOI</text>
+            </g>
+            <g>
+              <rect x="438" y="112" width="284" height="114" rx="8" fill="#111111" stroke="#111111" stroke-width="1.5" />
+              <rect x="454" y="126" width="96" height="18" rx="2" fill="none" stroke="#ffffff" stroke-width="1" />
+              <text x="502" y="138" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#ffffff">CORE ENGINE</text>
+              <text x="580" y="168" text-anchor="middle" font-family="'Inter', sans-serif" font-size="15" font-weight="600" fill="#ffffff">System One Clinical Compiler</text>
+              <text x="580" y="192" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#a1a1aa">10 Batched Primitives · Top-12 DDx</text>
+            </g>
+            <g>
+              <rect x="438" y="340" width="284" height="96" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+              <rect x="454" y="352" width="76" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+              <text x="492" y="364" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">ARBITER</text>
+              <text x="580" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">ESI Triage &amp; Order Router</text>
+              <text x="580" y="410" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">√(P(Organ)×P(Dx)) · MDM Note Gen</text>
+            </g>
+            <g>
+              <rect x="824" y="56" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+              <rect x="838" y="68" width="84" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+              <text x="880" y="80" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">CLOUD API</text>
+              <text x="966" y="102" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">TypeSafe Jev Cloud API</text>
+              <text x="966" y="124" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">POST /v1/systemone · jev-latest</text>
+            </g>
+            <g>
+              <rect x="824" y="198" width="284" height="92" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" stroke-dasharray="4 3" />
+              <rect x="838" y="210" width="90" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+              <text x="883" y="222" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">LOCAL WASM</text>
+              <text x="966" y="244" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">OpenJev Top Browser Model</text>
+              <text x="966" y="266" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">Qwen3.5-4B (84.5%) · MiniCPM5-2B</text>
+            </g>
+            <g>
+              <rect x="824" y="340" width="284" height="96" rx="8" fill="#ffffff" stroke="#111111" stroke-width="1.2" />
+              <rect x="838" y="352" width="92" height="18" rx="2" fill="none" stroke="#111111" stroke-width="1" />
+              <text x="884" y="364" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" letter-spacing="1" fill="#111111">PRIMITIVES</text>
+              <text x="966" y="388" text-anchor="middle" font-family="'Inter', sans-serif" font-size="14" font-weight="600" fill="#111111">choice() · score() · noul()</text>
+              <text x="966" y="410" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="10.5" fill="#52525b">DDx · Organ · ESI · Workup · Flags</text>
+            </g>
+            <path d="M 194 148 L 194 198" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+            <text x="204" y="176" font-family="'Geist Mono', monospace" font-size="9" font-weight="600" fill="#111111">+ / − FINDINGS</text>
+            <path d="M 194 290 L 194 340" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+            <text x="204" y="318" font-family="'Geist Mono', monospace" font-size="9" font-weight="600" fill="#111111">IC + CDRS</text>
+            <path d="M 336 388 L 386 388 Q 394 388 394 380 L 394 177 Q 394 169 402 169 L 438 169" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+            <rect x="358" y="268" width="72" height="16" fill="#ffffff" />
+            <text x="394" y="279" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">STATE JSON</text>
+            <path d="M 722 150 L 766 150 Q 774 150 774 142 L 774 110 Q 774 102 782 102 L 824 102" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+            <rect x="742" y="118" width="64" height="15" fill="#ffffff" />
+            <text x="774" y="129" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">BYOK API</text>
+            <path d="M 722 188 L 766 188 Q 774 188 774 196 L 774 236 Q 774 244 782 244 L 824 244" fill="none" stroke="#111111" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arch-arrow)" />
+            <rect x="740" y="208" width="68" height="15" fill="#ffffff" />
+            <text x="774" y="219" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">WASM GGUF</text>
+            <path d="M 966 290 L 966 340" fill="none" stroke="#111111" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arch-arrow)" />
+            <text x="976" y="318" font-family="'Geist Mono', monospace" font-size="9" font-weight="600" fill="#111111">1-TOK LOGITS</text>
+            <path d="M 824 388 L 722 388" fill="none" stroke="#111111" stroke-width="1.3" marker-end="url(#arch-arrow)" />
+            <rect x="734" y="368" width="78" height="15" fill="#ffffff" />
+            <text x="773" y="378" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">PROBS + CONF</text>
+            <path d="M 580 226 L 580 340" fill="none" stroke="#111111" stroke-width="1.3" stroke-dasharray="4 4" marker-end="url(#arch-arrow)" />
+            <rect x="538" y="274" width="84" height="16" fill="#ffffff" />
+            <text x="580" y="285" text-anchor="middle" font-family="'Geist Mono', monospace" font-size="8.5" font-weight="600" fill="#111111">POSTERIORS</text>
+          </svg>
+        </div>
+
+        <!-- 4 Science-Baked Clinical Literature Cards -->
+        <div class="arch-science-grid">
+          <div class="arch-science-card">
+            <div class="arch-science-eyebrow"><span class="step-num">01</span> DDXPLUS BENCHMARK (NEURIPS 2022)</div>
+            <h3>49 ICD-10 Pathologies &amp; 223 Clinical Findings</h3>
+            <p>
+              Grounded in <strong>Fansi Tchango et al. (NeurIPS 2022)</strong>. Models <strong>110 symptoms</strong> and <strong>113 medical antecedents</strong> across binary, categorical, and multi-choice attributes (pain localization, radiation, character, and 0–10 intensity) calibrated over <code>N = 8,000</code> patient encounters.
+            </p>
+          </div>
+
+          <div class="arch-science-card">
+            <div class="arch-science-eyebrow"><span class="step-num">02</span> QMR-DT BIPARTITE BAYESIAN (1991)</div>
+            <h3>Positive (LR+) &amp; Pertinent Negative (LR−) Likelihoods</h3>
+            <p>
+              Follows <strong>Shwe et al. (1991)</strong> reformulation of <em>INTERNIST-1 / QMR-DT</em>: combines demographic priors, positive likelihoods <code>P(e|D)</code>, explicit pertinent negative likelihood ratios <code>LR− = (1 − P(e|D)) / (1 − P(e|¬D))</code>, and impossible-finding leakage penalties.
+            </p>
+          </div>
+
+          <div class="arch-science-card">
+            <div class="arch-science-eyebrow"><span class="step-num">03</span> PHRANK INFORMATION CONTENT (2019)</div>
+            <h3>Pathognomonic Specificity &amp; Bedside Question Ranking</h3>
+            <p>
+              Implements <strong>Jagadeesh et al. (Genetics in Medicine 2019)</strong> information-theoretic phenotype ranking: each finding is weighted by <code>IC(e) = −ln P(e)</code> so pathognomonic signs outweigh generic symptoms. Unasked bedside questions are ranked by expected Shannon entropy reduction.
+            </p>
+          </div>
+
+          <div class="arch-science-card">
+            <div class="arch-science-eyebrow"><span class="step-num">04</span> SYSTEM ONE &amp; TOP IN-BROWSER QWEN3.5-4B</div>
+            <h3>10 Typed Primitives &amp; #1 In-Browser OpenJev Model</h3>
+            <p>
+              Compiles patient telemetry into 10 parallel System One primitives (4× <code>choice</code>, 2× <code>score</code>, 4× <code>noul</code>) evaluated via TypeSafe Cloud (<code>jev-latest</code>) or the <strong>#1 top in-browser OpenJev model</strong> (<code>Qwen3.5-4B</code> Q4_K_M GGUF, <strong>84.5%</strong> TypeSafe agreement) running locally in WebAssembly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible Clinical Validation & Benchmark Tab Drawer -->
+    <div class="top-drawer" id="drawer-eval" hidden>
+      <div class="drawer-inner">
+        <div class="drawer-header">
+          <span class="drawer-title">CLINICAL VALIDATION · DDXPLUS 49-PATHOLOGY ABLATION (N=60) &amp; IN-BROWSER OPENJEV LEADERBOARD</span>
+          <div style="display:flex; gap:10px; align-items:center;">
+            <a href="./eval-results.json" target="_blank" rel="noopener" class="openjev-link-badge">
+              Raw Benchmark JSON (N=60) ↗
+            </a>
+            <button type="button" class="drawer-close" id="btn-close-eval">Close</button>
+          </div>
+        </div>
+
+        <p class="arch-intro">
+          Head-to-head empirical benchmark across <strong>5 diagnostic architectures</strong> on <strong>N = 60 held-out DDXPlus clinical encounters</strong> spanning all <strong>49 ICD-10 pathologies</strong> under <strong>100% Full History</strong>, <strong>50% Partial Intake</strong>, and <strong>35% Sparse Emergency Triage</strong>—plus the official <strong>OpenJev In-Browser Model Quality Leaderboard</strong>.
+        </p>
+
+        <div class="eval-kpi-grid">
+          <div class="eval-kpi-card highlight">
+            <div class="mono-label">DIFFERENTIAL FULL (QMR-DT + JEV SYSTEM ONE)</div>
+            <div class="eval-kpi-num">100.0% <span class="eval-kpi-sub">Top-1 (Full) · 98.3% (50% Sx)</span></div>
+            <div class="eval-kpi-meta">93.3% at 35% Sparse Triage · 100% Red-Flag Recall · 126 ms p50</div>
+          </div>
+          <div class="eval-kpi-card">
+            <div class="mono-label">TOP IN-BROWSER JEV (QWEN3.5-4B GGUF)</div>
+            <div class="eval-kpi-num">84.5% <span class="eval-kpi-sub">TypeSafe Equal-Case Agreement</span></div>
+            <div class="eval-kpi-meta">81.3% Authored · 76.6% Perturbed · #1 Local Browser Model</div>
+          </div>
+          <div class="eval-kpi-card">
+            <div class="mono-label">PHRANK INFORMATION CONTENT (IC)</div>
+            <div class="eval-kpi-num">95.0% <span class="eval-kpi-sub">Full · 91.7% at 35% Sparse Sx</span></div>
+            <div class="eval-kpi-meta">Only −3.3% Sparse Drop · Outperforms Jaccard by +16.7%</div>
+          </div>
+          <div class="eval-kpi-card">
+            <div class="mono-label">UNWEIGHTED JACCARD OVERLAP</div>
+            <div class="eval-kpi-num">75.0% <span class="eval-kpi-sub">at 35% Sparse Sx (−21.7% Drop)</span></div>
+            <div class="eval-kpi-meta">Collapses under partial intake without −ln P(e) specificity</div>
+          </div>
+        </div>
+
+        <div class="eval-table-wrap">
+          <table class="eval-table" id="eval-benchmark-table">
+            <thead>
+              <tr>
+                <th>Diagnostic Engine &amp; Literature Foundation</th>
+                <th>Parameters &amp; Scope</th>
+                <th>Top-1 (100% Sx) &amp; 95% CI</th>
+                <th>Top-3 (100%)</th>
+                <th>Top-1 (50% Partial Sx)</th>
+                <th>Top-1 (35% Sparse Sx)</th>
+                <th>Sparse Drop (Δ)</th>
+                <th>Emergency Recall</th>
+                <th>MRR</th>
+                <th>Latency p50</th>
+              </tr>
+            </thead>
+            <tbody id="eval-matrix-tbody"></tbody>
+          </table>
+        </div>
+
+        <div class="eval-table-wrap" style="margin-top:12px;">
+          <table class="eval-table">
+            <thead>
+              <tr>
+                <th>In-Browser OpenJev / System One Model</th>
+                <th>Weights &amp; Quantization</th>
+                <th>Authored Balanced Accuracy</th>
+                <th>Perturbed Balanced Accuracy</th>
+                <th>TypeSafe Jev Agreement</th>
+                <th>Runtime Role</th>
+              </tr>
+            </thead>
+            <tbody id="openjev-leaderboard-tbody"></tbody>
+          </table>
+        </div>
+
+        <div class="eval-probe-section">
+          <div class="eval-probe-header">
+            <div>
+              <div class="arch-science-eyebrow"><span class="step-num">LIVE</span> SIDE-BY-SIDE CLINICAL CASE PROBE · QMR-DT VS. PHRANK IC VS. JACCARD VS. JEV</div>
+              <h3 style="margin:4px 0 0; font-size:0.98rem;">Inspect Real Posteriors, 35% Sparse-Intake Collisions &amp; Live Jev Verdicts</h3>
+            </div>
+            <div class="eval-probe-pills" id="eval-probe-pills"></div>
+          </div>
+          <div id="eval-probe-stage" class="eval-probe-stage"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-flow">
+    <!-- 1. PHYSICIAN-FOCUSED HERO STAGE -->
+    <section class="hero-stage">
+      <div class="hero-eyebrow">DDX · DIFFERENTIAL · 49 ICD-10 PATHOLOGIES · QMR-DT BAYESIAN + SYSTEM ONE</div>
+      <h1>DDx — <em>Differential.</em></h1>
+      <p class="hero-lead">
+        Document HPI in plain clinical text (including pertinent negatives like <em>“denies fever, no hemoptysis”</em>), toggle Review of Systems (<strong>+ Present</strong> / <strong>− Denies</strong>), and review ranked ICD-10 differentials, bedside risk scores, targeted history questions, and EHR-ready MDM notes.
+      </p>
+    </section>
+
+    <!-- 2. PHYSICIAN BEDSIDE CHARTING WORKBENCH -->
+    <section class="ingest-card" id="ingest-stage-card">
+      <!-- 01: Clinical Case Vignettes + Blank Patient Reset -->
+      <div class="ingest-samples-bar" style="margin-top:0; padding-top:0; border-top:none; margin-bottom:14px;">
+        <div class="ingest-samples-header">
+          <span class="samples-label">01 · SELECT A CLINICAL PRESENTATION VIGNETTE (OR START A BLANK PATIENT CHART):</span>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="mono-badge" id="active-case-id-badge">CASE: STEMI / ACS</span>
+            <button type="button" class="btn-secondary-sm" id="btn-new-patient" title="Clear chart and start a blank patient encounter">
+              + New Blank Patient
+            </button>
+          </div>
+        </div>
+        <div class="sample-pills" id="preset-pills">
+          <!-- Populated by app.js -->
+        </div>
+      </div>
+
+      <!-- 02: HPI Free-Text Note + Patient Vitals/Demographics -->
+      <div class="intake-grid">
+        <div class="intake-left">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <label for="clinical-narrative-input" class="mono-label">02 · HPI / CLINICAL PRESENTATION NOTE (AUTO-EXTRACTS + POSITIVES &amp; − PERTINENT NEGATIVES):</label>
+            <span class="mono-badge" id="nlp-parse-status-badge">NLP Ready · NegEx Enabled</span>
+          </div>
+          <textarea
+            id="clinical-narrative-input"
+            class="studio-textarea"
+            rows="3"
+            placeholder="Type HPI note (e.g., 58yo M with crushing substernal chest pain at rest radiating to jaw and diaphoresis; denies fever, no cough or hemoptysis. PMH: HTN, DM2, smoker)..."
+          ></textarea>
+        </div>
+
+        <div class="intake-right">
+          <div class="demo-field">
+            <label for="patient-age-input" class="mono-label">AGE (YRS)</label>
+            <input type="number" id="patient-age-input" class="studio-input" min="1" max="105" value="58" />
+          </div>
+          <div class="demo-field">
+            <label for="patient-sex-select" class="mono-label">SEX</label>
+            <select id="patient-sex-select" class="studio-select" style="width:100%;">
+              <option value="M">Male (M)</option>
+              <option value="F">Female (F)</option>
+            </select>
+          </div>
+          <div class="demo-field" style="grid-column: span 2;">
+            <button type="button" class="btn-action-primary" id="btn-run-diagnosis" style="width:100%; justify-content:center;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+              <span id="run-btn-label">Update Differential &amp; Triage</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 03: Organ-System Review of Systems (ROS) & Pertinent Negatives Workbench -->
+      <div class="evidence-picker-section">
+        <div class="evidence-picker-header">
+          <div>
+            <span class="samples-label">
+              03 · REVIEW OF SYSTEMS (ROS) &amp; PMH CHARTING (<span id="active-pos-count">0</span> PRESENT · <span id="active-neg-count">0</span> DENIED):
+            </span>
+          </div>
+          <div class="evidence-picker-controls">
+            <input
+              type="search"
+              id="evidence-search-input"
+              class="studio-input evidence-search"
+              placeholder="Search 223 symptoms or risk factors to mark [+ Present] or [− Denies]..."
+            />
+            <button type="button" class="btn-text-toggle" id="btn-clear-evidences">Reset Chart</button>
+          </div>
+        </div>
+
+        <!-- Dropdown search results with [+ Present] and [- Denies] buttons -->
+        <div class="evidence-search-results" id="evidence-search-results" hidden></div>
+
+        <!-- Organ-System ROS Quick-Filter Tabs -->
+        <div class="ros-tabs-bar" id="ros-tabs-bar" role="tablist" aria-label="Review of Systems Organ Categories">
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+        <!-- Organ-System ROS Quick-Toggle Grid (shown when an organ system tab is active) -->
+        <div class="ros-quick-grid" id="ros-quick-grid" hidden>
+          <!-- Populated dynamically by app.js -->
+        </div>
+
+        <!-- Structured Patient Chart Summary: Pertinent Positives (+), Pertinent Negatives (-), & PMH/Risk Factors -->
+        <div class="patient-chart-buckets" id="active-evidence-chips">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SEQUENTIAL PROGRESSIVE CLINICAL ASSESSMENT STREAM -->
+    <div class="progressive-stream" id="progressive-results" hidden>
+      <!-- CARD 01: PRIMARY WORKING DIAGNOSIS, ESI TRIAGE, ORDERS & MDM NOTE -->
+      <section class="stream-card reveal-card winner-hero-card" data-reveal-step="1">
+        <div class="card-eyebrow-row">
+          <span class="step-tag"><span class="step-num">01</span> WORKING DIAGNOSIS, ESI TRIAGE ACUITY &amp; BEDSIDE ORDERS</span>
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span class="gate-badge" id="routing-gate-badge">ESI LEVEL 1 · RESUSCITATION</span>
+            <button type="button" class="btn-copy-mdm" id="btn-copy-mdm-note" title="Copy structured SOAP / MDM Assessment &amp; Plan note to clipboard">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copy-mdm-label">Copy MDM / SOAP Note</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="winner-main">
+          <div class="winner-title-col">
+            <div class="winner-eyebrow" id="winner-organ-system">CARDIOVASCULAR &amp; THROMBOEMBOLIC</div>
+            <h2 class="winner-raga-name" id="winner-diag-name">—</h2>
+            <p class="winner-carnatic" id="winner-icd-pearl">ICD-10: —</p>
+          </div>
+
+          <div class="winner-metrics">
+            <div class="metric-box">
+              <span class="metric-label">POSTERIOR P(D|E)</span>
+              <span class="metric-value" id="winner-prob">—</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-label">DIAGNOSTIC CERTAINTY</span>
+              <span class="metric-value" id="winner-conf">—</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-label">ACUITY / SEVERITY</span>
+              <span class="metric-value" id="winner-beam">—</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cannot-Miss Red Flags Banner -->
+        <div class="red-flag-clinical-alert" id="red-flag-alert-box">
+          <div class="red-flag-alert-header">
+            <span class="mono-label" id="red-flag-alert-title">CANNOT-MISS RED FLAGS &amp; SUPPORTING CLINICAL SIGNATURE:</span>
+          </div>
+          <div class="red-flag-alert-body" id="winner-matched-sigs">—</div>
+        </div>
+
+        <!-- Actionable Bedside Order Set & Disposition -->
+        <div class="clinical-orders-panel" id="clinical-orders-panel">
+          <div class="orders-panel-header">
+            <div>
+              <span class="mono-label">RECOMMENDED IMMEDIATE DIAGNOSTIC &amp; THERAPEUTIC ORDER SET:</span>
+              <h3 class="orders-panel-title" id="orders-panel-title">—</h3>
+            </div>
+            <span class="mono-badge" id="orders-disposition-badge">—</span>
+          </div>
+          <ul class="orders-checklist" id="orders-checklist">
+            <!-- Populated dynamically by app.js -->
+          </ul>
+        </div>
+
+        <!-- Collapsible EHR-Ready MDM / SOAP Clinical Note Preview -->
+        <details class="mdm-note-preview-details" id="mdm-note-details">
+          <summary class="mdm-note-summary">
+            <span class="mono-label">PREVIEW EHR-READY MEDICAL DECISION MAKING (MDM / SOAP) NOTE</span>
+            <span class="mono-badge">Expand Note ▾</span>
+          </summary>
+          <pre class="mdm-note-pre" id="mdm-note-preview-text"></pre>
+        </details>
+
+        <p class="routing-summary" id="routing-summary"></p>
+      </section>
+
+      <!-- CARD 02: INTERACTIVE BEDSIDE HISTORY QUESTIONS (YES / NO) -->
+      <section class="stream-card reveal-card" data-reveal-step="2">
+        <div class="card-eyebrow-row">
+          <span class="step-tag"><span class="step-num">02</span> BEDSIDE HISTORY: HIGHEST-YIELD QUESTIONS TO NARROW THE DIFFERENTIAL</span>
+          <span class="mono-badge" id="entropy-stats-badge">Diagnostic Uncertainty: 0.00 bits</span>
+        </div>
+        <p class="primitive-desc">
+          Unasked clinical questions ranked by expected Shannon information gain. Click <strong>+ Yes (Present)</strong> or <strong>− No (Denies)</strong> as you interview the patient to update the Bayesian posterior in real time.
+        </p>
+
+        <div class="voi-questions-list" id="voi-questions-container">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </section>
+
+      <!-- CARD 03: VALIDATED BEDSIDE CLINICAL DECISION RULES (HEART, WELLS PE, CURB-65, ESI) -->
+      <section class="stream-card reveal-card" data-reveal-step="3">
+        <div class="card-eyebrow-row">
+          <span class="step-tag"><span class="step-num">03</span> VALIDATED BEDSIDE RISK CALCULATORS (HEART · WELLS PE · CURB-65 · RED FLAGS)</span>
+          <span class="mono-badge" id="esi-summary-badge">ESI v4 Triage</span>
+        </div>
+        <div class="cdr-grid" id="cdr-cards-container">
+          <!-- Populated dynamically by app.js -->
+        </div>
+      </section>
+
+      <!-- CARD 04: RANKED DIFFERENTIAL DIAGNOSIS WITH RULE-IN / RULE-OUT EVIDENCE MATRIX -->
+      <section class="stream-card reveal-card" data-reveal-step="4">
+        <div class="card-eyebrow-row">
+          <span class="step-tag"><span class="step-num">04</span> RANKED DIFFERENTIAL DIAGNOSIS &amp; RULE-IN / RULE-OUT REASONING (TOP 10 OF 49)</span>
+          <span class="mono-badge">ICD-10 · Supporting vs. Missing Findings</span>
+        </div>
+        <p class="primitive-desc">
+          Each candidate diagnosis displays its calibrated posterior probability, acuity flag (highlighting <strong>CRITICAL RULE-OUT</strong> emergencies), confirmed patient findings (<strong>✓ Present</strong>), pertinent negatives (<strong>✗ Denied</strong>), and unconfirmed textbook findings you can click to add.
+        </p>
+        <div class="choice-list" id="choice-candidates-list">
+          <!-- Populated dynamically -->
+        </div>
+      </section>
+
+      <!-- CARD 05: ORGAN SYSTEM DISTRIBUTION, PHRANK SPECIFICITY & CLINICAL SAFETY RUBRICS -->
+      <section class="stream-card reveal-card" data-reveal-step="5">
+        <div class="card-eyebrow-row">
+          <span class="step-tag"><span class="step-num">05</span> ORGAN-SYSTEM DISTRIBUTION, PHRANK SPECIFICITY &amp; SAFETY VERIFIERS</span>
+          <span class="mono-badge" id="top-ic-badge">Peak Specificity: —</span>
+        </div>
+        <div class="primitives-split-grid">
+          <div>
+            <h3 class="subcard-heading">Patient Findings by Diagnostic Specificity (Phrank IC)</h3>
+            <div class="ic-bars-list" id="ic-findings-container"></div>
+          </div>
+          <div>
+            <h3 class="subcard-heading">6-System Pathophysiology Probability P(System | E)</h3>
+            <div class="ic-bars-list" id="organ-system-bars-container"></div>
+          </div>
+        </div>
+
+        <div class="primitives-split-grid" style="margin-top:18px; padding-top:16px; border-top:1px solid var(--card-border);">
+          <div>
+            <h3 class="subcard-heading">Continuous Clinical Acuity &amp; Specificity Rubrics (0.00 – 3.00)</h3>
+            <div class="score-cards" id="score-primitives-container"></div>
+          </div>
+          <div>
+            <h3 class="subcard-heading">Calibrated Clinical Safety Verifiers (0.00 – 1.00)</h3>
+            <div class="noul-cards" id="noul-primitives-container"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CARD 06: COLLAPSIBLE SYSTEM ONE PAYLOAD & 49-PATHOLOGY ICD-10 REFERENCE -->
+      <details class="stream-card reveal-card details-card" data-reveal-step="6">
+        <summary class="details-summary">
+          <span class="step-tag"><span class="step-num">06</span> INSPECT SYSTEM ONE TELEMETRY JSON &amp; 49-PATHOLOGY ICD-10 MEDICAL REFERENCE</span>
+          <span class="mono-badge">Expand ▾</span>
+        </summary>
+        <div class="details-body">
+          <div class="inspector-header" style="margin-bottom:14px;">
+            <span class="mono-label">POST https://api.typesafe.ai/v1/systemone (model: "jev-latest")</span>
+            <button type="button" class="btn-secondary-sm" id="btn-copy-curl">
+              <span id="copy-curl-label">Copy curl</span>
+            </button>
+          </div>
+          <div class="inspector-split">
+            <div class="inspector-pane">
+              <div class="pane-title">REQUEST: PATIENT STATE + 10 CLINICAL PRIMITIVES</div>
+              <pre id="inspector-request-json" class="code-block">Loading...</pre>
+            </div>
+            <div class="inspector-pane">
+              <div class="pane-title">RESPONSE: CALIBRATED JUDGMENTS</div>
+              <pre id="inspector-response-json" class="code-block">Loading...</pre>
+            </div>
+          </div>
+          <input
+            type="search"
+            id="catalog-search"
+            class="studio-input"
+            style="margin-top:24px;width:100%;"
+            placeholder="Search all 49 DDXPlus pathologies by disease name, ICD-10 code, organ system, or clinical pearl..."
+          />
+          <div class="mono-label" id="catalog-count" style="margin-top:10px;"></div>
+          <div class="catalog-grid" id="catalog-grid" style="margin-top:14px;"></div>
+        </div>
+      </details>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="./llms.txt">llms.txt</a>
+        <span>·</span>
+        <a href="./.well-known/agent-card.json">agent-card.json</a>
+        <span>·</span>
+        <a href="./architecture-diagram.html">Architecture Blueprint</a>
+        <span>·</span>
+        <a href="./eval-results.json">Benchmark JSON</a>
+        <span>·</span>
+        <a href="https://docs.typesafe.ai/" target="_blank" rel="noopener">TypeSafe Docs</a>
+      </div>
+      <div class="footer-credit">
+        Made with <span style="color: #f05032;">&#9829;</span> <a href="https://h3manth.com" target="_blank" rel="noopener">Hemanth HM</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./app.js?v=4"></script>
+</body>
+</html>

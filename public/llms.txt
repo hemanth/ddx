@@ -1,0 +1,8 @@
+# DDx — Differential
+
+> Classify patient symptoms, pertinent negatives, and medical antecedents across 49 DDXPlus ICD-10 pathologies using QMR-DT Bipartite Bayesian Networks (Shwe et al., 1991), Phrank Information Content (Jagadeesh et al., 2019), Clinical Decision Rules (HEART, Wells PE, CURB-65, ESI v4), and TypeSafe System One (`jev-latest`) or In-Browser OpenJev (`Qwen3.5-4B` WASM GGUF).
+
+## Endpoints
+- `GET /api/catalog`: Full 49-pathology DDXPlus knowledge base, 223 clinical evidences, 6 organ system families, and 10 featured clinical vignettes.
+- `POST /api/classify`: Evaluates structured evidence codes + pertinent negatives + free-text clinical vignette and returns 10 System One judgments (`choice`, `score`, `noul`), QMR-DT Bayesian posteriors, Phrank IC scores, and Shannon entropy active-inquiry recommendations.
+- `GET /eval-results.json`: Empirical benchmark results across N=60 DDXPlus cases and OpenJev browser model tiers (`Qwen3.5-4B`, `MiniCPM5-2B`, `Qwen3-0.6B`).
