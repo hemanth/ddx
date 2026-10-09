@@ -536,7 +536,7 @@ function renderRosTabsAndChart() {
         <span class="chart-bucket-hint">Click any finding to flip to [− Denies]</span>
       </div>
       <div class="chart-chip-row">
-        ${posSymptoms.length ? posSymptoms.map((x) => renderChip(x, 'pos')).join('') : '<span class="empty-chart-hint">No positive symptoms charted yet — select from ROS tabs or type in HPI note above.</span>'}
+        ${posSymptoms.length ? posSymptoms.map((x) => renderChip(x, 'pos')).join('') : '<span class="empty-chart-hint">No positive symptoms charted yet · select from ROS tabs or type in HPI note above.</span>'}
       </div>
     </div>
 
@@ -546,7 +546,7 @@ function renderRosTabsAndChart() {
         <span class="chart-bucket-hint">Applies Negative Likelihood Ratio (LR−) to rule down competing diagnoses</span>
       </div>
       <div class="chart-chip-row">
-        ${negItems.length ? negItems.map((x) => renderChip(x, 'neg')).join('') : '<span class="empty-chart-hint">No pertinent negatives charted — click [− No] on Bedside Questions below or type "denies fever" in HPI.</span>'}
+        ${negItems.length ? negItems.map((x) => renderChip(x, 'neg')).join('') : '<span class="empty-chart-hint">No pertinent negatives charted · click [− No] on Bedside Questions below or type "denies fever" in HPI.</span>'}
       </div>
     </div>
 
@@ -743,7 +743,7 @@ function buildClinicalMdmNote(data) {
     `3. DIFFERENTIAL DIAGNOSIS (QMR-DT BAYESIAN + TYPESAFE SYSTEM ONE):`,
     ...top5.map(
       (c, i) =>
-        `   ${i + 1}. ${c.name} [ICD-10 ${c.icd10}] — Posterior P = ${(c.probability * 100).toFixed(1)}%${c.ddxSeverity <= 2 ? ' [CRITICAL RULE-OUT]' : ''}\n` +
+        `   ${i + 1}. ${c.name} [ICD-10 ${c.icd10}] · Posterior P = ${(c.probability * 100).toFixed(1)}%${c.ddxSeverity <= 2 ? ' [CRITICAL RULE-OUT]' : ''}\n` +
         `      Supporting: ${c.matchedSignature.map((s) => getClinicianLabel(s.code)).join(', ') || 'Clinical presentation'}`
     ),
     ``,
@@ -1079,7 +1079,7 @@ function renderClassification(data, { animate = true } = {}) {
   if (topIcBadge) {
     topIcBadge.textContent = topFindings.length
       ? `Peak Specificity: ${getClinicianLabel(topFindings[0].code)} (IC ${topFindings[0].informationContent.toFixed(2)} nats)`
-      : 'Peak Specificity: —';
+      : 'Peak Specificity: -';
   }
 
   const icContainer = document.getElementById('ic-findings-container');
@@ -1331,8 +1331,8 @@ async function loadEvalResults() {
           <tr class="${idx === 0 ? 'eval-row-winner' : ''}">
             <td><strong>${b.name}</strong></td>
             <td class="mono-cell">${b.downloadSize}</td>
-            <td class="mono-cell">${b.authoredBalancedAccuracyPct != null ? `${b.authoredBalancedAccuracyPct}%` : '—'}</td>
-            <td class="mono-cell">${b.perturbedBalancedAccuracyPct != null ? `${b.perturbedBalancedAccuracyPct}%` : '—'}</td>
+            <td class="mono-cell">${b.authoredBalancedAccuracyPct != null ? `${b.authoredBalancedAccuracyPct}%` : '-'}</td>
+            <td class="mono-cell">${b.perturbedBalancedAccuracyPct != null ? `${b.perturbedBalancedAccuracyPct}%` : '-'}</td>
             <td class="mono-cell"><strong>${b.typesafeEqualCaseAgreementPct}%</strong></td>
             <td class="mono-cell">${b.recommendedTier}</td>
           </tr>

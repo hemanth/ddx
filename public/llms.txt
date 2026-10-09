@@ -1,4 +1,4 @@
-# DDx — Differential
+# DDx · Differential
 
 > Classify patient symptoms, pertinent negatives, and medical antecedents across 49 DDXPlus ICD-10 pathologies using QMR-DT Bipartite Bayesian Networks (Shwe et al., 1991), Phrank Information Content (Jagadeesh et al., 2019), Clinical Decision Rules (HEART, Wells PE, CURB-65, ESI v4), and TypeSafe System One (`jev-latest`) or In-Browser OpenJev (`Qwen3.5-4B` WASM GGUF).
 

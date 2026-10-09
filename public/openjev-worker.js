@@ -206,7 +206,7 @@ async function evaluateClinicalState({ state, candidates, organSystems }) {
   // 1. Direct 1-token logit readout for primary_diagnosis (top 12 shortlisted candidates)
   const diagOptions = candidates.slice(0, 12).map((c) => ({
     key: c.id,
-    description: `${c.name} (ICD-10 ${c.icd10}, ${c.organSystemLabel}) — QMR-DT Posterior: ${c.bayesianPosterior}; Matched Findings: ${c.matchedSignature.map((s) => s.label).join(', ')}`
+    description: `${c.name} (ICD-10 ${c.icd10}, ${c.organSystemLabel}) · QMR-DT Posterior: ${c.bayesianPosterior}; Matched Findings: ${c.matchedSignature.map((s) => s.label).join(', ')}`
   }));
 
   const primaryDiagRes = await runSingleDirectChoice(
@@ -229,11 +229,11 @@ async function evaluateClinicalState({ state, candidates, organSystems }) {
 
   // 3. Direct 1-token logit readout for esi_triage_tier (5 ESI levels A..E)
   const esiOptions = [
-    { key: 'esi_1_resuscitation', description: 'ESI Level 1 — Immediate life-saving resuscitation required' },
-    { key: 'esi_2_emergent', description: 'ESI Level 2 — High-risk emergent condition requiring rapid ED intervention' },
-    { key: 'esi_3_urgent', description: 'ESI Level 3 — Urgent stable presentation requiring multiple diagnostic resources' },
-    { key: 'esi_4_less_urgent', description: 'ESI Level 4 — Less urgent localized presentation requiring 1 resource' },
-    { key: 'esi_5_non_urgent', description: 'ESI Level 5 — Non-urgent ambulatory care presentation' }
+    { key: 'esi_1_resuscitation', description: 'ESI Level 1 · Immediate life-saving resuscitation required' },
+    { key: 'esi_2_emergent', description: 'ESI Level 2 · High-risk emergent condition requiring rapid ED intervention' },
+    { key: 'esi_3_urgent', description: 'ESI Level 3 · Urgent stable presentation requiring multiple diagnostic resources' },
+    { key: 'esi_4_less_urgent', description: 'ESI Level 4 · Less urgent localized presentation requiring 1 resource' },
+    { key: 'esi_5_non_urgent', description: 'ESI Level 5 · Non-urgent ambulatory care presentation' }
   ];
 
   const esiRes = await runSingleDirectChoice(
@@ -247,8 +247,8 @@ async function evaluateClinicalState({ state, candidates, organSystems }) {
     compactState,
     'Are life-threatening red-flag emergency warning signs or ESI Level 1/2 acuity present in this patient?',
     [
-      { key: 'yes', description: 'Yes — critical red-flag signs or emergent high-risk pathology are present' },
-      { key: 'no', description: 'No — stable presentation without immediate life-threatening red flags' }
+      { key: 'yes', description: 'Yes · critical red-flag signs or emergent high-risk pathology are present' },
+      { key: 'no', description: 'No · stable presentation without immediate life-threatening red flags' }
     ]
   );
 

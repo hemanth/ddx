@@ -23,7 +23,7 @@ const MIME_TYPES = {
 };
 
 function buildMarkdownRunbook(host) {
-  return `# ClinJev — Science-Baked Clinical Differential Diagnosis & Triage Studio
+  return `# DDx · Science-Baked Clinical Differential Diagnosis & Triage Studio
 
 Classify patient symptoms and medical antecedents across 49 DDXPlus pathologies (ICD-10) using deterministic QMR-DT Bipartite Bayesian Network + Phrank Information Content (IC) scoring and TypeSafe System One (\`jev-latest\`) or in-browser OpenJev (\`Qwen3.5-4B\` GGUF WASM).
 
@@ -40,8 +40,8 @@ Classify patient symptoms and medical antecedents across 49 DDXPlus pathologies 
    - Evaluates 10 parallel typed primitives (\`choice\`, \`score\`, \`noul\`) in one \`POST /v1/systemone\` batch call, or runs **Qwen3.5-4B** (#1 top in-browser OpenJev model at 84.5% TypeSafe agreement) via \`@wllama/wllama\` 1-token direct option logit readout.
 
 ## API Endpoints
-- \`GET http://${host}/api/catalog\` — Retrieve the 49 DDXPlus pathologies, 223 evidences, 6 organ system families, and 10 featured clinical presets.
-- \`POST http://${host}/api/classify\` — Classify a patient encounter from structured DDXPlus evidence codes and/or free-text clinical narrative.
+- \`GET http://${host}/api/catalog\` · Retrieve the 49 DDXPlus pathologies, 223 evidences, 6 organ system families, and 10 featured clinical presets.
+- \`POST http://${host}/api/classify\` · Classify a patient encounter from structured DDXPlus evidence codes and/or free-text clinical narrative.
 
 ## Quick CLI Example
 \`\`\`bash

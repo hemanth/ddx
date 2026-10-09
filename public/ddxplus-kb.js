@@ -1,4 +1,4 @@
-// Auto-generated from DDXPlus (Fansi Tchango et al., NeurIPS 2022) — N=8000 clinical encounters
+// Auto-generated from DDXPlus (Fansi Tchango et al., NeurIPS 2022) · N=8000 clinical encounters
 export const DDXPLUS_KB = {
   "dataset": "DDXPlus (Fansi Tchango et al., NeurIPS 2022)",
   "trainedEncounters": 8000,

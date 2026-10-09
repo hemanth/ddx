@@ -1,6 +1,6 @@
 # ddx
 
-> **DDx — Differential**: Classify patient symptoms and pertinent negatives into 49 ICD-10 differential diagnoses using QMR-DT Bayesian networks, Phrank Information Content, TypeSafe System One (`jev-latest`), and in-browser WebAssembly (`Qwen3.5-4B` GGUF via `@wllama/wllama`).
+> **DDx · Differential**: Classify patient symptoms and pertinent negatives into 49 ICD-10 differential diagnoses using QMR-DT Bayesian networks, Phrank Information Content, TypeSafe System One (`jev-latest`), and in-browser WebAssembly (`Qwen3.5-4B` GGUF via `@wllama/wllama`).
 
 ```bash
 npm install ddx
@@ -66,9 +66,9 @@ Switch the engine drawer between **TypeSafe Jev Cloud**, **Qwen3.5-4B (Browser �
 
 ## Scientific Grounding
 
-- **DDXPlus**: Fansi Tchango et al. (2022), *NeurIPS Datasets and Benchmarks* — 49 ICD-10 pathologies, 223 symptoms & antecedents (`E_0`–`E_222`).
-- **QMR-DT**: Shwe et al. (1991), *Methods of Information in Medicine* — Bipartite Bayesian network with positive ($\text{LR}^+$) and negative ($\text{LR}^-$) likelihood ratios.
-- **Phrank**: Jagadeesh et al. (2019), *Genetics in Medicine* — Information Content $\text{IC}(e) = -\ln P(e)$ phenotypic specificity weighting.
+- **DDXPlus**: Fansi Tchango et al. (2022), *NeurIPS Datasets and Benchmarks* · 49 ICD-10 pathologies, 223 symptoms & antecedents (`E_0`–`E_222`).
+- **QMR-DT**: Shwe et al. (1991), *Methods of Information in Medicine* · Bipartite Bayesian network with positive ($\text{LR}^+$) and negative ($\text{LR}^-$) likelihood ratios.
+- **Phrank**: Jagadeesh et al. (2019), *Genetics in Medicine* · Information Content $\text{IC}(e) = -\ln P(e)$ phenotypic specificity weighting.
 - **Clinical Decision Rules**: Six et al. (2008) HEART Score, Wells et al. (2000) PE Criteria, Lim et al. (2003) CURB-65, Gilboy et al. (2012) AHRQ ESI v4.
 
 ## License

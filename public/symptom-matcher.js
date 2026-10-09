@@ -143,7 +143,7 @@ export const CLINICAL_ORDER_SETS = {
     title: 'Acute Airway & Bronchospasm Stabilization Order Set',
     disposition: 'Resuscitation / Airway Cart at Bedside · Continuous SpO2 & EtCO2',
     orders: [
-      'Immediate airway assessment — keep patient in position of comfort; prepare difficult-airway cart',
+      'Immediate airway assessment · keep patient in position of comfort; prepare difficult-airway cart',
       'IM Epinephrine (0.3–0.5 mg 1:1000 anterolateral thigh) immediately if Anaphylaxis suspected',
       'Nebulized Epinephrine / Dexamethasone (0.6 mg/kg) if Croup/stridor; SABA + Ipratropium if bronchospasm',
       'Lateral soft-tissue neck radiograph or fiberoptic nasolaryngoscopy (ENT/Anesthesia standby if Epiglottitis)',
@@ -620,10 +620,10 @@ export function evaluateClinicalDecisionRules(normalized) {
       tier: heartScore >= 4 ? 'HIGH_RISK_ACS' : heartScore >= 2 ? 'MODERATE_RISK' : 'LOW_RISK',
       recommendation:
         heartScore >= 4
-          ? 'High MACE risk — STAT ECG, serial 0h/1h hs-Troponin, telemetry & cardiology consult'
+          ? 'High MACE risk · STAT ECG, serial 0h/1h hs-Troponin, telemetry & cardiology consult'
           : heartScore >= 2
-            ? 'Moderate risk — Serial hs-Troponin & observation pathway'
-            : 'Low pre-test ACS risk — Evaluate non-coronary causes if troponin/ECG negative',
+            ? 'Moderate risk · Serial hs-Troponin & observation pathway'
+            : 'Low pre-test ACS risk · Evaluate non-coronary causes if troponin/ECG negative',
       matchedCriteria: heartCriteria
     },
     wellsPe: {
@@ -631,10 +631,10 @@ export function evaluateClinicalDecisionRules(normalized) {
       tier: wellsPeScore >= 4.5 ? 'PE_LIKELY' : wellsPeScore >= 2.0 ? 'MODERATE_PRETEST' : 'PE_UNLIKELY',
       recommendation:
         wellsPeScore >= 4.5
-          ? 'PE Likely (>4 pts) — Proceed directly to CT Pulmonary Angiography (CTPA)'
+          ? 'PE Likely (>4 pts) · Proceed directly to CT Pulmonary Angiography (CTPA)'
           : wellsPeScore >= 2.0
-            ? 'Moderate pretest probability — Order high-sensitivity age-adjusted D-dimer'
-            : 'PE Unlikely — Apply PERC rule or D-dimer only if clinically indicated',
+            ? 'Moderate pretest probability · Order high-sensitivity age-adjusted D-dimer'
+            : 'PE Unlikely · Apply PERC rule or D-dimer only if clinically indicated',
       matchedCriteria: wellsCriteria
     },
     curb65: {
@@ -643,10 +643,10 @@ export function evaluateClinicalDecisionRules(normalized) {
       tier: curb65Score >= 3 ? 'SEVERE_INPATIENT_ICU' : curb65Score >= 2 ? 'INPATIENT_WARD' : 'OUTPATIENT_CANDIDATE',
       recommendation:
         curb65Score >= 3
-          ? 'Severe CAP risk — Inpatient admission; consider ICU if respiratory/hemodynamic support needed'
+          ? 'Severe CAP risk · Inpatient admission; consider ICU if respiratory/hemodynamic support needed'
           : curb65Score >= 2
-            ? 'Moderate severity — Short-stay inpatient or supervised hospital observation'
-            : 'Low mortality risk — Outpatient oral antimicrobial therapy if applicable',
+            ? 'Moderate severity · Short-stay inpatient or supervised hospital observation'
+            : 'Low mortality risk · Outpatient oral antimicrobial therapy if applicable',
       matchedCriteria: curbCriteria
     },
     redFlags,

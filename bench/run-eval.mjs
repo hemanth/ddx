@@ -354,7 +354,7 @@ async function runBenchmark() {
     benchmarkTitle: 'ClinJev DDXPlus 49-Pathology Differential Diagnosis & Symptom Completeness Ablation',
     generatedAt: new Date().toISOString(),
     hardware: 'Apple Silicon arm64 · Node.js ESM + TypeSafe System One (jev-1.13.0)',
-    dataset: 'DDXPlus (Fansi Tchango et al., NeurIPS 2022) — 8,000 Training Encounters, N=60 Golden Test Slice across all 49 Pathologies',
+    dataset: 'DDXPlus (Fansi Tchango et al., NeurIPS 2022) · 8,000 Training Encounters, N=60 Golden Test Slice across all 49 Pathologies',
     methods: summaryRows,
     openJevBrowserBenchmarks,
     probes: probeCases

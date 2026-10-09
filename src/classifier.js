@@ -139,15 +139,15 @@ export function buildClinicalSystemOnePayload(telemetry, metadata = {}) {
       'According to the Emergency Severity Index (ESI v4) and `clinical_decision_rules`, which triage disposition tier applies to this patient?',
       {
         esi_1_resuscitation:
-          'ESI Level 1 (Immediate Resuscitation) — Life-threatening airway, hemodynamic, or systemic instability (e.g., Anaphylaxis, Acute Pulmonary Edema, STEMI, Laryngospasm, Ebola)',
+          'ESI Level 1 (Immediate Resuscitation) · Life-threatening airway, hemodynamic, or systemic instability (e.g., Anaphylaxis, Acute Pulmonary Edema, STEMI, Laryngospasm, Ebola)',
         esi_2_emergent:
-          'ESI Level 2 (Emergent) — High-risk chest pain, pulmonary embolism, Boerhaave rupture, epiglottitis, Guillain-Barré, or acute neurological/respiratory compromise',
+          'ESI Level 2 (Emergent) · High-risk chest pain, pulmonary embolism, Boerhaave rupture, epiglottitis, Guillain-Barré, or acute neurological/respiratory compromise',
         esi_3_urgent:
-          'ESI Level 3 (Urgent) — Stable vital signs requiring multiple diagnostic resources (labs, imaging, nebulizers, or specialist consultation, e.g., Pneumonia, Asthma/COPD flare, Hernia)',
+          'ESI Level 3 (Urgent) · Stable vital signs requiring multiple diagnostic resources (labs, imaging, nebulizers, or specialist consultation, e.g., Pneumonia, Asthma/COPD flare, Hernia)',
         esi_4_less_urgent:
-          'ESI Level 4 (Less Urgent) — Localized or subacute condition requiring a single diagnostic or therapeutic resource (e.g., Viral Pharyngitis, Acute Otitis Media, Anemia workup)',
+          'ESI Level 4 (Less Urgent) · Localized or subacute condition requiring a single diagnostic or therapeutic resource (e.g., Viral Pharyngitis, Acute Otitis Media, Anemia workup)',
         esi_5_non_urgent:
-          'ESI Level 5 (Non-Urgent / Outpatient) — Self-limited viral URTI, chronic rhinosinusitis, or resolved panic episode manageable in ambulatory care'
+          'ESI Level 5 (Non-Urgent / Outpatient) · Self-limited viral URTI, chronic rhinosinusitis, or resolved panic episode manageable in ambulatory care'
       }
     ),
 

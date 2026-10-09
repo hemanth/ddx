@@ -531,7 +531,7 @@ kb_payload = {
     "featuredPresets": featured_presets,
 }
 
-js_out = f"// Auto-generated from DDXPlus (Fansi Tchango et al., NeurIPS 2022) — N={total_N} clinical encounters\n"
+js_out = f"// Auto-generated from DDXPlus (Fansi Tchango et al., NeurIPS 2022) · N={total_N} clinical encounters\n"
 js_out += f"export const DDXPLUS_KB = {json.dumps(kb_payload, indent=2)};\n"
 
 with open("/Users/lika/labs/symptoms-classifer/public/ddxplus-kb.js", "w", encoding="utf-8") as f:
